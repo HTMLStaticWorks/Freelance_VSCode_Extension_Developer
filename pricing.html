@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | VSCode Dev</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- UI Framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#020617',
+                        'dark-elevated': '#0f172a',
+                        'accent-cyan': '#06b6d4',
+                        'accent-violet': '#8b5cf6',
+                        'accent-emerald': '#10b981',
+                        'accent-rose': '#f43f5e',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Animation Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden">
+    <!-- Global Animation Background -->
+    <canvas id="particles-canvas" class="fixed inset-0 z-[-1] pointer-events-none opacity-50"></canvas>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 top-0">
+        <div class="glass border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent-cyan/30">
+                            <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-white dark:text-white">
+                            VSCode<span class="text-accent-cyan">Dev</span>
+                        </span>
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <!-- Desktop Menu -->
+                    <div class="hidden xl:flex items-center space-x-1">
+                        <a href="index.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                        <a href="home2.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home 2</a>
+                        <a href="about.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
+                        <a href="services.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
+                        <a href="extensions.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
+                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case Studies</a>
+                        <a href="pricing.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">Pricing</a>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="flex items-center gap-2">
+                         <!-- Desktop-only: icons -->
+                          <div class="hidden xl:flex items-center gap-2">
+                             <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-white/5 transition-colors"
+                                 aria-label="Toggle Theme">
+                                 <i data-lucide="moon" class="w-5 h-5 text-gray-300" id="dark-icon"></i>
+                             </button>
+                             <button onclick="toggleRTL()"
+                                 class="p-2 rounded-lg hover:bg-white/5 transition-colors"
+                                 aria-label="Toggle RTL">
+                                 <i data-lucide="languages" class="w-5 h-5 text-gray-300"></i>
+                             </button>
+                             <a href="login.html"
+                                 class="p-2 rounded-lg hover:bg-white/5 transition-colors text-gray-300 hover:text-accent-cyan"
+                                 title="Sign In">
+                                 <i data-lucide="user" class="w-5 h-5"></i>
+                             </a>
+                             <a href="dashboard.html"
+                                 class="p-2.5 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet text-white hover:shadow-lg hover:shadow-accent-cyan/30 transition-all transform hover:-translate-y-0.5"
+                                 title="Dashboard">
+                                 <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                             </a>
+                         </div>
+                          <!-- Hamburger: mobile/tablet only -->
+                          <button onclick="toggleMobileMenu()"
+                              class="xl:hidden p-2 rounded-lg hover:bg-white/5 transition-colors">
+                             <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden glass border-b border-white/5">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="index.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                <a href="home2.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
+                    2</a>
+                <a href="about.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
+                <a href="services.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
+                <a href="extensions.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
+                <a href="case-studies.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case
+                    Studies</a>
+                <a href="contact.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+                <a href="pricing.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Pricing</a>
+                <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+                    <!-- Mobile: Theme & RTL toggles -->
+                    <div class="flex items-center gap-2 pb-2">
+                        <button onclick="toggleDarkMode()" class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all" aria-label="Toggle Theme">
+                            <i id="dark-icon" data-lucide="moon" class="w-5 h-5 flex-shrink-0"></i>
+                            <span>Theme</span>
+                        </button>
+                        <button onclick="toggleRTL()" class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all" aria-label="Toggle RTL">
+                            <i data-lucide="languages" class="w-5 h-5 flex-shrink-0"></i>
+                            <span>RTL</span>
+                        </button>
+                    </div>
+                    <a href="login.html"
+                        class="w-full px-4 py-3 rounded-lg text-center text-sm font-medium text-accent-cyan border border-accent-cyan/30">Sign In</a>
+                    <a href="dashboard.html"
+                        class="w-full px-4 py-3 rounded-lg text-center text-sm font-semibold text-white bg-gradient-to-r from-accent-cyan to-accent-violet">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main id="app-container" class="min-h-screen pt-20 sm:pt-24">
+        
+        <section id="pricing-tiers" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <span class="text-accent-emerald font-mono text-sm uppercase tracking-widest block mb-4">// Scalable Value</span>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-8 tracking-tight">Investment Plans</h1>
+                <p class="text-gray-400 text-xl max-w-3xl mx-auto">Scale your development team with elite-grade tools and strategic consulting.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 mb-32">
+                <!-- Startup -->
+                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-cyan/30 transition-all flex flex-col justify-between h-full">
+                    <div>
+                        <div class="w-14 h-14 bg-accent-cyan/10 rounded-2xl flex items-center justify-center text-accent-cyan mb-8">
+                            <i data-lucide="zap" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Startup</h3>
+                        <div class="text-5xl font-black mb-8 text-white">$1,999<span class="text-sm font-normal text-gray-500">/unit</span></div>
+                        <ul class="space-y-4 mb-12">
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-cyan"></i> Custom Extension Core</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-cyan"></i> VSCode API Integration</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-cyan"></i> Standard Support</li>
+                        </ul>
+                    </div>
+                    <button class="w-full py-5 rounded-2xl border border-accent-cyan/30 text-accent-cyan font-black hover:bg-accent-cyan hover:text-white transition-all">Select Plan</button>
+                </div>
+
+                <!-- Pro (Featured) -->
+                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] glass p-10 rounded-[3rem] border-2 border-accent-violet relative overflow-hidden bg-white/5 shadow-2xl flex flex-col justify-between h-full md:scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-accent-violet text-white text-[10px] font-black px-6 py-2 rounded-bl-2xl tracking-widest uppercase">Popular</div>
+                    <div>
+                        <div class="w-14 h-14 bg-accent-violet/10 rounded-2xl flex items-center justify-center text-accent-violet mb-8">
+                            <i data-lucide="layers" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Pro Tooling</h3>
+                        <div class="text-5xl font-black mb-8 text-white">$4,999<span class="text-sm font-normal text-gray-500">/unit</span></div>
+                        <ul class="space-y-4 mb-12">
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Full LSP Support</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Custom Debug Adapter</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Priority Maintenance</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Performance Audits</li>
+                        </ul>
+                    </div>
+                    <button class="w-full py-5 rounded-2xl bg-accent-violet text-white font-black hover:shadow-lg hover:shadow-accent-violet/40 transition-all">Select Pro</button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-rose/30 transition-all flex flex-col justify-between h-full">
+                    <div>
+                        <div class="w-14 h-14 bg-accent-rose/10 rounded-2xl flex items-center justify-center text-accent-rose mb-8">
+                            <i data-lucide="globe" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <div class="text-5xl font-black mb-8 text-white">Custom</div>
+                        <ul class="space-y-4 mb-12">
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-rose"></i> AI Model Integration</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-rose"></i> 24/7 Dedicated Lead</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-rose"></i> Custom Architecture</li>
+                        </ul>
+                    </div>
+                    <button class="w-full py-5 rounded-2xl border border-accent-rose/30 text-accent-rose font-black hover:bg-accent-rose hover:text-white transition-all">Inquire Now</button>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="glass rounded-[3rem] overflow-hidden border border-white/5 mb-32">
+                <div class="p-12 border-b border-white/5">
+                    <h2 class="text-4xl font-bold">Deep Comparison</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-white/5 bg-white/5">
+                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-gray-500">Features</th>
+                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-cyan">Startup</th>
+                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-violet">Pro</th>
+                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-rose">Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-400">
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-8">VSCode API Implementation</td>
+                                <td class="p-8 text-accent-cyan"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-8">Language Server Protocol</td>
+                                <td class="p-8 text-gray-600"><i data-lucide="minus" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-8">Custom Webview UI</td>
+                                <td class="p-8 text-accent-cyan"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-8">AI/LLM Integration</td>
+                                <td class="p-8 text-gray-600"><i data-lucide="minus" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-gray-600"><i data-lucide="minus" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                            </tr>
+                             <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="p-8">Support SLA</td>
+                                <td class="p-8">48 Hours</td>
+                                <td class="p-8">12 Hours</td>
+                                <td class="p-8 font-bold text-white">Immediate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Value Cards -->
+            <div class="grid md:grid-cols-2 gap-8">
+                 <div class="glass p-12 rounded-[3rem] border border-white/5 group hover:border-accent-emerald/30 transition-all">
+                    <h3 class="text-3xl font-bold mb-6">Unrivaled ROI</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">Average teams report a 40% productivity lift within the first month of implementing our custom toolsets.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent-emerald/10 flex items-center justify-center text-accent-emerald"><i data-lucide="trending-up" class="w-6 h-6"></i></div>
+                        <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Verified Analytics</span>
+                    </div>
+                 </div>
+                 <div class="glass p-12 rounded-[3rem] border border-white/5 group hover:border-accent-cyan/30 transition-all">
+                    <h3 class="text-3xl font-bold mb-6">Global Scaling</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">Our solutions are built to handle massive enterprise needs, from thousands of users to global infrastructures.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="globe" class="w-6 h-6"></i></div>
+                        <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Distributed Core</span>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass border-t border-white/5 py-20 mt-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-accent-violet/5 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="space-y-8 text-center md:text-left">
+                    <div>
+                        <a href="index.html" class="flex items-center justify-center md:justify-start gap-3 mb-6 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center shadow-lg shadow-accent-cyan/20 group-hover:rotate-12 transition-transform duration-500">
+                                <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <span class="font-bold text-2xl tracking-tight">VSCode<span
+                                    class="text-accent-cyan">Dev</span></span>
+                        </a>
+                        <p class="text-gray-400 leading-relaxed">
+                            Architecting the next generation of developer experiences through high-performance VSCode
+                            extensions and language servers.
+                        </p>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-cyan/50 hover:shadow-lg hover:shadow-accent-cyan/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/twitter-icon.png" alt="Twitter"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-violet/50 hover:shadow-lg hover:shadow-accent-violet/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/linkedin-icon.png" alt="LinkedIn"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-rose/50 hover:shadow-lg hover:shadow-accent-rose/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/instagram-icon.png" alt="Instagram"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solutions -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
+                        Solutions
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-cyan rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                LSP Development</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Debug Adapters</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Custom Webviews</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                UI Architecture</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
+                        Company
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-violet rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                About Me</a></li>
+                        <li><a href="case-studies.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Case Studies</a></li>
+                        <li><a href="extensions.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Marketplace</a></li>
+                        <li><a href="pricing.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Service Plans</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Support -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
+                        Support
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-emerald rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                            <div
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase font-bold">Email Us</div>
+                                <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">
+                                    hello@vscodedev.com</div>
+                            </div>
+                        </li>
+                        <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                            <div
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                <i data-lucide="message-square" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase font-bold">Live Chat</div>
+                                <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">Available
+                                    24/7</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-sm text-gray-500">
+                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-center">
+                    <span>&copy; 2026 VSCode Dev Portfolio. All rights reserved.</span>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                    <span>System Status: All Operations Normal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
+

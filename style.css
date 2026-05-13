@@ -1,0 +1,307 @@
+/* Custom Design System & Utilities */
+:root {
+    --primary-glow: rgba(6, 182, 212, 0.5);
+    --secondary-glow: rgba(139, 92, 246, 0.5);
+    --dark-bg: #0a0a0f;
+    --dark-surface: #13131f;
+    --dark-elevated: #1a1a2e;
+    --dark-border: #2a2a3e;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--dark-bg);
+    color: #f3f4f6;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--dark-border);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a5e;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(19, 19, 31, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Neon & Glow */
+.neon-text {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+}
+.neon-border {
+    box-shadow: 0 0 5px currentColor, inset 0 0 5px currentColor;
+}
+
+/* Grid Background */
+.grid-bg {
+    background-image: 
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Holographic Effect */
+.holographic {
+    background: linear-gradient(135deg, 
+        rgba(6, 182, 212, 0.1) 0%, 
+        rgba(139, 92, 246, 0.1) 25%, 
+        rgba(16, 185, 129, 0.1) 50%, 
+        rgba(244, 63, 94, 0.1) 75%, 
+        rgba(6, 182, 212, 0.1) 100%);
+    background-size: 400% 400%;
+    animation: holographic 8s ease infinite;
+}
+@keyframes holographic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 3D Perspective & Tilt */
+.perspective-1000 { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+
+.tilt-card {
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+}
+.tilt-content {
+    transform: translateZ(50px);
+}
+
+/* Button 3D Press */
+.btn-3d {
+    transition: all 0.1s;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+}
+.btn-3d:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3); }
+    100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(6, 182, 212, 0.5); }
+}
+
+/* Typing Effect Cursor */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Page Transitions */
+.page-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+.page-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.dashboard-section.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Status Indicator */
+.status-pulse {
+    position: relative;
+}
+.status-pulse::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.4;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ping {
+    75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+/* Dashboard Sidebar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Scanlines */
+.scanlines {
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(6, 182, 212, 0.03) 50%
+    );
+    background-size: 100% 4px;
+}
+
+/* Light Mode Overrides */
+.light-mode {
+    --dark-bg: #f8fafc;
+    --dark-surface: #ffffff;
+    --dark-elevated: #f1f5f9;
+    --dark-border: #e2e8f0;
+}
+.light-mode body {
+    background-color: var(--dark-bg);
+    color: #1e293b;
+}
+.light-mode .glass {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.light-mode .text-white { color: #0f172a !important; }
+.light-mode .text-gray-400 { color: #4b5563 !important; }
+.light-mode .text-gray-300 { color: #374151 !important; }
+.light-mode .text-gray-500 { color: #6b7280 !important; }
+
+/* Dashboard Background Overrides */
+.light-mode .bg-dark-bg {
+    background-color: var(--dark-bg) !important;
+}
+.light-mode .bg-dark-elevated {
+    background-color: var(--dark-elevated) !important;
+}
+
+/* Social Icon Visibility Fix */
+.light-mode .social-icon-btn {
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.1);
+}
+.light-mode .social-icon-btn img {
+    filter: brightness(0.2); /* Make colorful icons darker/visible on light bg */
+}
+.light-mode .social-icon-btn:hover {
+    background: rgba(15, 23, 42, 0.1);
+}
+
+/* Dashboard Specific Light Mode Refinements */
+.light-mode .hover\:bg-white\/5:hover {
+    background-color: rgba(15, 23, 42, 0.05) !important;
+}
+.light-mode .bg-accent-cyan\/20 {
+    background-color: rgba(6, 182, 212, 0.2) !important;
+}
+.light-mode .bg-accent-cyan\/10 {
+    background-color: rgba(6, 182, 212, 0.15) !important;
+}
+.light-mode .bg-accent-violet\/10 {
+    background-color: rgba(139, 92, 246, 0.15) !important;
+}
+.light-mode .bg-accent-rose\/10 {
+    background-color: rgba(244, 63, 94, 0.15) !important;
+}
+.light-mode .bg-accent-emerald\/10 {
+    background-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Custom Prose */
+.prose h3 { color: white; font-weight: 800; }
+.prose p { margin-bottom: 1.5rem; }
+.prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.prose li { margin-bottom: 0.5rem; }
+
+.light-mode .prose h3 { color: #0f172a; }
+.light-mode .prose p { color: #475569; }
+
+/* =========================================================
+   MOBILE / TABLET — CENTER ALL CARD CONTENT (incl. images)
+   Below 1024px: logo + hamburger only in navbar;
+   all card content (text, icons, images) centered.
+   ========================================================= */
+@media (max-width: 1023px) {
+
+    /* ── All standalone images in page content center ── */
+    section img,
+    main img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    /* ── Images inside glass cards center ── */
+    main .glass img,
+    section .glass img,
+    .tilt-card img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ── Card text alignment: ONLY inside main/section, NOT navbar ── */
+    main .glass,
+    section .glass,
+    .tilt-card .tilt-content {
+        text-align: center;
+    }
+
+    /* ── Card flex rows → center (main content only) ── */
+    main .glass > .flex,
+    section .glass > .flex,
+    .tilt-card > .flex {
+        justify-content: center;
+    }
+
+    /* ── Counter stats ── */
+    .counter { text-align: center; }
+
+    /* ── Navbar glass must NOT be centered ── */
+    nav .glass,
+    nav .glass * {
+        text-align: unset !important;
+    }
+
+    /* ── Navbar flex rows restore proper layout ── */
+    nav .flex { justify-content: unset; }
+    nav .flex.items-center { justify-content: unset; }
+    nav .flex.items-center.justify-between { justify-content: space-between; }
+
+    /* ── Mobile menu links stay left-aligned ── */
+    #mobile-menu a,
+    #mobile-menu button {
+        text-align: left !important;
+    }
+}

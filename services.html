@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | VSCode Dev</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- UI Framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#020617',
+                        'dark-elevated': '#0f172a',
+                        'accent-cyan': '#06b6d4',
+                        'accent-violet': '#8b5cf6',
+                        'accent-emerald': '#10b981',
+                        'accent-rose': '#f43f5e',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Animation Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden">
+    <!-- Global Animation Background -->
+    <canvas id="particles-canvas" class="fixed inset-0 z-[-1] pointer-events-none opacity-50"></canvas>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 top-0">
+        <div class="glass border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent-cyan/30">
+                            <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-white dark:text-white">
+                            VSCode<span class="text-accent-cyan">Dev</span>
+                        </span>
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden xl:flex items-center space-x-1">
+                        <a href="index.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                        <a href="home2.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home 2</a>
+                        <a href="about.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
+                        <a href="services.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">Services</a>
+                        <a href="extensions.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
+                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case Studies</a>
+                        <a href="pricing.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="flex items-center gap-2">
+                        <!-- Desktop-only: icons -->
+                        <div class="hidden xl:flex items-center gap-2">
+                            <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-white/5 transition-colors"
+                                aria-label="Toggle Theme">
+                                <i data-lucide="moon" class="w-5 h-5 text-gray-300" id="dark-icon"></i>
+                            </button>
+                            <button onclick="toggleRTL()"
+                                class="p-2 rounded-lg hover:bg-white/5 transition-colors"
+                                aria-label="Toggle RTL">
+                                <i data-lucide="languages" class="w-5 h-5 text-gray-300"></i>
+                            </button>
+                            <a href="login.html"
+                                class="p-2 rounded-lg hover:bg-white/5 transition-colors text-gray-300 hover:text-accent-cyan"
+                                title="Sign In">
+                                <i data-lucide="user" class="w-5 h-5"></i>
+                            </a>
+                            <a href="dashboard.html"
+                                class="p-2.5 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet text-white hover:shadow-lg hover:shadow-accent-cyan/30 transition-all transform hover:-translate-y-0.5"
+                                title="Dashboard">
+                                <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <!-- Hamburger: mobile/tablet only -->
+                        <button onclick="toggleMobileMenu()"
+                            class="xl:hidden p-2 rounded-lg hover:bg-white/5 transition-colors">
+                            <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden glass border-b border-white/5">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="index.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                <a href="home2.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
+                    2</a>
+                <a href="about.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
+                <a href="services.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Services</a>
+                <a href="extensions.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
+                <a href="case-studies.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case
+                    Studies</a>
+                <a href="contact.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+                <a href="pricing.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+                    <!-- Mobile: Theme & RTL toggles -->
+                    <div class="flex items-center gap-2 pb-2">
+                        <button onclick="toggleDarkMode()" class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all" aria-label="Toggle Theme">
+                            <i id="dark-icon" data-lucide="moon" class="w-5 h-5 flex-shrink-0"></i>
+                            <span>Theme</span>
+                        </button>
+                        <button onclick="toggleRTL()" class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all" aria-label="Toggle RTL">
+                            <i data-lucide="languages" class="w-5 h-5 flex-shrink-0"></i>
+                            <span>RTL</span>
+                        </button>
+                    </div>
+                    <a href="login.html"
+                        class="w-full px-4 py-3 rounded-lg text-center text-sm font-medium text-accent-cyan border border-accent-cyan/30">Sign In</a>
+                    <a href="dashboard.html"
+                        class="w-full px-4 py-3 rounded-lg text-center text-sm font-semibold text-white bg-gradient-to-r from-accent-cyan to-accent-violet">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main id="app-container" class="min-h-screen pt-20 sm:pt-24">
+        
+        <section id="services-bento" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <span class="inline-block px-4 py-1 rounded-full bg-accent-cyan/10 text-accent-cyan text-xs font-bold uppercase tracking-widest mb-6">Expertise</span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 tracking-tight">Our Services</h1>
+                <p class="text-gray-400 text-xl max-w-2xl mx-auto">Elite developer tools and specialized integration services for the VSCode ecosystem.</p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+                
+                <!-- Large Featured: LSP -->
+                <div class="md:col-span-8 md:row-span-2 glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group overflow-hidden relative">
+                    <div class="absolute inset-0 z-0">
+                        <img src="images/service page/service-1.png" alt="LSP" class="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent"></div>
+                    </div>
+                    <div class="relative z-10 p-12 h-full flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-accent-cyan/20 rounded-xl flex items-center justify-center text-accent-cyan mb-6">
+                            <i data-lucide="binary" class="w-8 h-8"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold mb-4">Language Server Protocol</h2>
+                        <p class="text-gray-400 text-lg max-w-xl mb-8">Industrial-grade Language Servers that bring custom DSLs and languages to life with IntelliSense and real-time diagnostics.</p>
+                        <a href="contact.html" class="inline-flex items-center gap-2 text-accent-cyan font-bold hover:gap-4 transition-all">Request LSP Quote <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Webview UI -->
+                <div class="md:col-span-4 md:row-span-1 glass rounded-[2.5rem] border border-white/5 hover:border-accent-violet/30 transition-all group p-8 flex flex-col justify-between overflow-hidden relative">
+                    <div class="relative z-10">
+                        <div class="w-10 h-10 bg-accent-violet/20 rounded-lg flex items-center justify-center text-accent-violet mb-4">
+                            <i data-lucide="layout" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Webview UI</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Interactive dashboards inside VSCode using modern web tech.</p>
+                    </div>
+                    <div class="absolute bottom-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-all translate-y-4 group-hover:translate-y-0">
+                        <i data-lucide="layout" class="w-32 h-32 text-accent-violet"></i>
+                    </div>
+                </div>
+
+                <!-- Performance -->
+                <div class="md:col-span-4 md:row-span-1 glass rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group p-8 flex flex-col justify-between overflow-hidden relative">
+                    <div class="relative z-10">
+                        <div class="w-10 h-10 bg-accent-emerald/20 rounded-lg flex items-center justify-center text-accent-emerald mb-4">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Performance</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Profiling and optimization for massive codebases.</p>
+                    </div>
+                    <div class="absolute bottom-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-all translate-y-4 group-hover:translate-y-0">
+                        <i data-lucide="zap" class="w-32 h-32 text-accent-emerald"></i>
+                    </div>
+                </div>
+
+                <!-- Marketplace (Tall) -->
+                <div class="md:col-span-4 md:row-span-2 glass rounded-[2.5rem] border border-white/5 hover:border-accent-rose/30 transition-all group overflow-hidden relative p-12 flex flex-col justify-between">
+                    <div class="absolute inset-0 z-0">
+                         <div class="absolute inset-0 bg-gradient-to-br from-accent-rose/10 to-transparent"></div>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-accent-rose/20 rounded-xl flex items-center justify-center text-accent-rose mb-6">
+                            <i data-lucide="shopping-cart" class="w-8 h-8"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4">Marketplace Strategy</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">SEO-optimized icons, descriptions, and CI/CD publishing pipelines for maximum reach.</p>
+                    </div>
+                    <div class="relative z-10">
+                        <img src="images/service page/service-5.png" alt="Marketplace" class="rounded-2xl border border-white/10 group-hover:rotate-2 transition-all">
+                    </div>
+                </div>
+
+                <!-- DAP Debugger -->
+                <div class="md:col-span-8 md:row-span-1 glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group p-12 flex items-center justify-between overflow-hidden relative">
+                    <div class="relative z-10 max-w-md">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 bg-accent-cyan/20 rounded-lg flex items-center justify-center text-accent-cyan">
+                                <i data-lucide="bug" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Debug Adapter (DAP)</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Providing your users with a first-class troubleshooting experience native to the IDE.</p>
+                    </div>
+                    <div class="relative z-10 hidden md:block">
+                         <button class="px-6 py-3 rounded-xl bg-white text-dark-bg font-bold hover:bg-accent-cyan hover:text-white transition-all">Explore DAP</button>
+                    </div>
+                </div>
+
+                <!-- Enterprise (Wide) -->
+                <div class="md:col-span-12 md:row-span-1 glass rounded-[2.5rem] border border-white/5 hover:border-accent-violet/30 transition-all group overflow-hidden relative">
+                    <div class="absolute inset-0 z-0 flex items-center justify-end pr-20 opacity-20">
+                         <i data-lucide="users" class="w-96 h-96 text-accent-violet"></i>
+                    </div>
+                    <div class="relative z-10 p-12 flex flex-col md:flex-row items-center justify-between h-full">
+                        <div class="max-w-2xl text-center md:text-left">
+                            <h2 class="text-3xl font-bold mb-4">Enterprise Consulting</h2>
+                            <p class="text-gray-400">Strategic guidance for large-scale IDE tool migrations and enterprise-level DX improvements.</p>
+                        </div>
+                        <div class="mt-6 md:mt-0">
+                            <a href="contact.html" class="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-accent-violet to-accent-rose text-white font-black hover:scale-105 transition-all shadow-xl shadow-accent-violet/20">Book Consultation</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Section: Engagement Lifecycle (3x3 Grid with Images) -->
+            <div class="space-y-16 pt-32">
+                <div class="text-center">
+                    <span class="inline-block px-4 py-1 rounded-full bg-accent-emerald/10 text-accent-emerald text-xs font-bold uppercase tracking-widest mb-6">Our Process</span>
+                    <h2 class="text-3xl sm:text-5xl font-black mb-4">SERVICE <span class="text-accent-emerald">LIFECYCLE</span></h2>
+                    <div class="w-24 h-1 bg-accent-emerald mx-auto rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 01 Discovery -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Discovery">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">01</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Discovery Phase</h3>
+                            <p class="text-gray-400">In-depth analysis of your existing tooling ecosystem and developer workflow challenges.</p>
+                        </div>
+                    </div>
+                    <!-- 02 Strategic Mapping -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Mapping">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">02</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Strategic Mapping</h3>
+                            <p class="text-gray-400">Architectural blueprinting of the solution, including technology stack and integration points.</p>
+                        </div>
+                    </div>
+                    <!-- 03 Rapid Prototyping -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Prototyping">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">03</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Rapid Prototyping</h3>
+                            <p class="text-gray-400">Developing minimum viable extensions to validate core functionality and user experience.</p>
+                        </div>
+                    </div>
+                    <!-- 04 Core Development -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Development">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">04</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Core Development</h3>
+                            <p class="text-gray-400">High-fidelity engineering using the latest VSCode APIs and industry best practices.</p>
+                        </div>
+                    </div>
+                    <!-- 05 Quality Assurance -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="QA">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">05</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Quality Assurance</h3>
+                            <p class="text-gray-400">Rigorous automated testing across multiple OS versions and IDE distributions.</p>
+                        </div>
+                    </div>
+                    <!-- 06 Deployment Sync -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Deployment">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">06</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Deployment Sync</h3>
+                            <p class="text-gray-400">Automated publishing to the Marketplace or internal enterprise VSIX repositories.</p>
+                        </div>
+                    </div>
+                    <!-- 07 Post-Launch Audit -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Audit">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">07</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Post-Launch Audit</h3>
+                            <p class="text-gray-400">Performance monitoring and user feedback analysis to guide immediate refinements.</p>
+                        </div>
+                    </div>
+                    <!-- 08 Scalability Support -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Scalability">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">08</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Scalability Support</h3>
+                            <p class="text-gray-400">Optimizing the extension for large-scale enterprise adoption and massive codebases.</p>
+                        </div>
+                    </div>
+                    <!-- 09 Continuous Evolv -->
+                    <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden group hover:bg-white/5 transition-all">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Evolution">
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-accent-emerald text-white rounded-xl flex items-center justify-center font-black">09</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Continuous Evolv</h3>
+                            <p class="text-gray-400">Ongoing maintenance and feature updates to keep pace with the evolving IDE landscape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section: Market Influence (3x3 Text Grid) -->
+            <div class="space-y-16 pt-32 pb-32">
+                <div class="text-center">
+                    <span class="inline-block px-4 py-1 rounded-full bg-accent-emerald/10 text-accent-emerald text-xs font-bold uppercase tracking-widest mb-6">Business Impact</span>
+                    <h2 class="text-3xl sm:text-5xl font-black mb-4">MARKET <span class="text-accent-emerald">INFLUENCE</span></h2>
+                    <div class="w-24 h-1 bg-accent-emerald mx-auto rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Productivity Gains</h3>
+                        <p class="text-gray-400">Average teams report a 40% increase in development velocity within the first quarter.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Cost Reduction</h3>
+                        <p class="text-gray-400">Streamlined workflows reduce operational overhead and developer onboarding time by 60%.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">User Retention</h3>
+                        <p class="text-gray-400">High-fidelity tools lead to a 25% increase in developer satisfaction and ecosystem loyalty.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Risk Mitigation</h3>
+                        <p class="text-gray-400">Automated security audits and hardended architectures minimize production vulnerabilities.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="globe" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Global Scaling</h3>
+                        <p class="text-gray-400">Enterprise solutions designed to handle thousands of concurrent users across distributed networks.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Modern Tech Stack</h3>
+                        <p class="text-gray-400">Leveraging the latest VSCode APIs and LSP features to keep your tooling ahead of the curve.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">System Uptime</h3>
+                        <p class="text-gray-400">99.9% availability for mission-critical extension infrastructure and cloud-based services.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Rapid Iteration</h3>
+                        <p class="text-gray-400">Accelerated development cycles through automated CI/CD and deployment pipelines.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group">
+                        <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Market Leadership</h3>
+                        <p class="text-gray-400">Establish your brand as a leader in the developer tools marketplace with elite-grade extensions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass border-t border-white/5 py-20 mt-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-accent-violet/5 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="space-y-8 text-center md:text-left">
+                    <div>
+                        <a href="index.html" class="flex items-center justify-center md:justify-start gap-3 mb-6 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center shadow-lg shadow-accent-cyan/20 group-hover:rotate-12 transition-transform duration-500">
+                                <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <span class="font-bold text-2xl tracking-tight">VSCode<span
+                                    class="text-accent-cyan">Dev</span></span>
+                        </a>
+                        <p class="text-gray-400 leading-relaxed">
+                            Architecting the next generation of developer experiences through high-performance VSCode
+                            extensions and language servers.
+                        </p>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-cyan/50 hover:shadow-lg hover:shadow-accent-cyan/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/twitter-icon.png" alt="Twitter"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-violet/50 hover:shadow-lg hover:shadow-accent-violet/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/linkedin-icon.png" alt="LinkedIn"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-rose/50 hover:shadow-lg hover:shadow-accent-rose/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/instagram-icon.png" alt="Instagram"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solutions -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
+                        Solutions
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-cyan rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                LSP Development</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Debug Adapters</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Custom Webviews</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                UI Architecture</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
+                        Company
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-violet rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                About Me</a></li>
+                        <li><a href="case-studies.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Case Studies</a></li>
+                        <li><a href="extensions.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Marketplace</a></li>
+                        <li><a href="pricing.html"
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
+                                Service Plans</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Support -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
+                        Support
+                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-emerald rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                            <div
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase font-bold">Email Us</div>
+                                <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">
+                                    hello@vscodedev.com</div>
+                            </div>
+                        </li>
+                        <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                            <div
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                <i data-lucide="message-square" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase font-bold">Live Chat</div>
+                                <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">Available
+                                    24/7</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-sm text-gray-500">
+                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-center">
+                    <span>&copy; 2026 VSCode Dev Portfolio. All rights reserved.</span>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                    <span>System Status: All Operations Normal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
+
