@@ -28,33 +28,22 @@
                         'accent-violet': '#8b5cf6',
                         'accent-emerald': '#10b981',
                         'accent-rose': '#f43f5e',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
                     }
                 }
             }
         }
     </script>
     
-    <!-- Animation Libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>">
 </head>
+
 <body class="bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden">
-    <!-- Global Animation Background -->
-    <canvas id="particles-canvas" class="fixed inset-0 z-[-1] pointer-events-none opacity-50"></canvas>
+    <!-- Global Animation Background (Removed) -->
+
 
     <!-- Navigation -->
     <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 top-0">
@@ -79,9 +68,11 @@
                         <a href="about.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                         <a href="services.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
                         <a href="extensions.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
-                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case Studies</a>
+                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
                         <a href="pricing.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                        <a href="contact.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                     </div>
+
 
                     <!-- Right Side -->
                     <div class="flex items-center gap-2">
@@ -123,8 +114,7 @@
                 <a href="index.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
                 <a href="home2.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Home
-                    2</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Home 2</a>
                 <a href="about.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                 <a href="services.html"
@@ -132,12 +122,11 @@
                 <a href="extensions.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
                 <a href="case-studies.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case
-                    Studies</a>
-                <a href="contact.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
                 <a href="pricing.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                <a href="contact.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                 <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
                     <!-- Mobile: Theme & RTL toggles -->
                     <div class="flex items-center gap-2 pb-2">
@@ -219,136 +208,157 @@
             </div>
 
             <div class="py-32 max-w-7xl mx-auto px-4 space-y-32">
-                <!-- Module 1: UI Engine -->
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="space-y-8">
-                        <div class="inline-block px-4 py-1 rounded-full border border-accent-cyan/30 text-accent-cyan text-[10px] font-bold uppercase tracking-widest">Module 01 // UI Engine</div>
-                        <h2 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight">Interfaces that <span class="text-accent-cyan">Breathe</span>.</h2>
-                        <p class="text-gray-400 text-xl leading-relaxed">Our webviews are built with sub-millisecond responsiveness and fluid animations that guide your workflow, not distract from it.</p>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-accent-cyan"><i data-lucide="monitor" class="w-6 h-6"></i></div>
-                            <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-accent-cyan"><i data-lucide="smartphone" class="w-6 h-6"></i></div>
-                        </div>
-                    </div>
-                    <div class="aspect-square glass rounded-[4rem] border border-white/10 overflow-hidden relative group">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200" alt="UI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-accent-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                             <div class="px-8 py-4 bg-white text-dark-bg font-black rounded-xl cursor-pointer">PREVIEW RENDER</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module 2: Core Synergy -->
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="aspect-video glass rounded-[4rem] border border-white/10 overflow-hidden order-2 lg:order-1 relative group">
-                         <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200" alt="API" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110">
-                         <div class="absolute inset-0 bg-dark-bg/60 flex items-center justify-center p-12">
-                             <div class="w-full text-left font-mono text-[10px] text-accent-violet space-y-2">
-                                 <div>> Connecting to VSCode API...</div>
-                                 <div class="text-white">> [SUCCESS] Bridge Established</div>
-                                 <div class="text-gray-600">> Monitoring events: onDidChangeTextDocument</div>
-                             </div>
-                         </div>
-                    </div>
-                    <div class="space-y-8 order-1 lg:order-2">
-                        <div class="inline-block px-4 py-1 rounded-full border border-accent-violet/30 text-accent-violet text-[10px] font-bold uppercase tracking-widest">Module 02 // Core Synergy</div>
-                        <h2 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight">Deep <span class="text-accent-violet">API</span> Integration.</h2>
-                        <p class="text-gray-400 text-xl leading-relaxed">We leverage the full power of internal systems, ensuring your tools feel native, not bolted on. Performance is never an afterthought.</p>
-                        <button class="px-8 py-4 rounded-xl border border-accent-violet/30 text-accent-violet font-bold hover:bg-accent-violet/10 transition-all uppercase text-xs tracking-widest">Inspect documentation</button>
-                    </div>
-                </div>
-
-                <!-- Section: Visual Infrastructure (3x3 Image Grid) -->
-                <div class="space-y-16">
-                    <div class="text-center px-4">
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4">VISUAL <span class="text-accent-cyan">INFRASTRUCTURE</span></h2>
-                        <div class="w-24 h-1 bg-accent-cyan mx-auto rounded-full"></div>
-                    </div>
-                    <div class="flex flex-wrap justify-center gap-8">
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Server">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1518433278981-1127cc340b0e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Circuit">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="World">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Tech">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Energy">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Particles">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Security">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Future">
-                        </div>
-                        <div class="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] aspect-square glass rounded-3xl overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Code">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section: Operational Directives (3x3 Text Grid) -->
+                <!-- Unified Technical Arsenal Section -->
                 <div class="space-y-16">
                     <div class="text-center">
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4">OPERATIONAL <span class="text-accent-violet">DIRECTIVES</span></h2>
-                        <div class="w-24 h-1 bg-accent-violet mx-auto rounded-full"></div>
+                         <span class="text-accent-cyan font-mono text-xs uppercase tracking-widest block mb-4">// System Modules</span>
+                         <h2 class="text-4xl sm:text-6xl font-black">TECHNICAL <span class="text-accent-cyan">ARSENAL</span></h2>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-001</div>
-                            <h3 class="text-2xl font-bold mb-4">System Latency Optimization</h3>
-                            <p class="text-gray-400">Maintain sub-millisecond response times across all core API bridges and internal event loops.</p>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- UI Engine Sub-module -->
+                        <div class="glass rounded-[3rem] border border-white/5 overflow-hidden group p-8 flex flex-col md:flex-row gap-8 items-center">
+                            <div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="UI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                            </div>
+                            <div class="w-full md:w-1/2 space-y-4">
+                                <div class="w-10 h-10 bg-accent-cyan/10 rounded-lg flex items-center justify-center text-accent-cyan mb-4"><i data-lucide="monitor" class="w-5 h-5"></i></div>
+                                <h3 class="text-2xl font-bold">UI Engine</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Sub-millisecond responsiveness with fluid animations guiding your workflow.</p>
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">React</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">Tailwind</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-002</div>
-                            <h3 class="text-2xl font-bold mb-4">Neural Path Integration</h3>
-                            <p class="text-gray-400">Ensure seamless data flow between visual interfaces and backend logic clusters.</p>
-                        </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-003</div>
-                            <h3 class="text-2xl font-bold mb-4">Security Handshake Protocols</h3>
-                            <p class="text-gray-400">Enforce enterprise-grade encryption for all telemetry and user data transmission.</p>
-                        </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-004</div>
-                            <h3 class="text-2xl font-bold mb-4">Modular Component Scaling</h3>
-                            <p class="text-gray-400">Enable hot-swappable feature modules without system restart or state loss.</p>
-                        </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-005</div>
-                            <h3 class="text-2xl font-bold mb-4">Visual Rendering Engine</h3>
-                            <p class="text-gray-400">Leverage GPU acceleration for fluid 60FPS UI transitions and data visualizations.</p>
-                        </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-006</div>
-                            <h3 class="text-2xl font-bold mb-4">Legacy Bridge Support</h3>
-                            <p class="text-gray-400">Maintain compatibility with previous-gen IDE versions through specialized adapter layers.</p>
-                        </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-007</div>
-                            <h3 class="text-2xl font-bold mb-4">Telemetry Diagnostics</h3>
-                            <p class="text-gray-400">Real-time health monitoring of all active extension instances and user interactions.</p>
-                        </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-008</div>
-                            <h3 class="text-2xl font-bold mb-4">Automated QA Cycles</h3>
-                            <p class="text-gray-400">Continuous integration testing with 100% coverage on mission-critical logic paths.</p>
-                        </div>
-                        <div class="glass p-10 rounded-3xl border border-white/5 hover:border-accent-violet/30 transition-all group">
-                            <div class="text-accent-violet font-mono text-sm mb-4">DR-009</div>
-                            <h3 class="text-2xl font-bold mb-4">Global Distribution Node</h3>
-                            <p class="text-gray-400">Deploy updates globally through a distributed CDN network for zero-downtime rollouts.</p>
+
+                        <!-- Core Synergy Sub-module -->
+                        <div class="glass rounded-[3rem] border border-white/5 overflow-hidden group p-8 flex flex-col md:flex-row gap-8 items-center">
+                            <div class="w-full md:w-1/2 order-2 md:order-1 space-y-4">
+                                <div class="w-10 h-10 bg-accent-violet/10 rounded-lg flex items-center justify-center text-accent-violet mb-4"><i data-lucide="command" class="w-5 h-5"></i></div>
+                                <h3 class="text-2xl font-bold">Core Synergy</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Deep integration with VSCode internal systems for native-feeling tools.</p>
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">Node.js</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">VSCode API</span>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden order-1 md:order-2">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="API" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Section: Operational Infrastructure -->
+                <div class="space-y-16">
+                    <div class="text-center">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4">OPERATIONAL <span class="text-accent-cyan">INFRASTRUCTURE</span></h2>
+                        <div class="w-24 h-1 bg-accent-cyan mx-auto rounded-full"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-cyan/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Server">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">System Latency Optimization</h3>
+                                <p class="text-gray-400 leading-relaxed">Maintain sub-millisecond response times across all core API bridges and internal event loops.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-violet/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1518433278981-1127cc340b0e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Circuit">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Neural Path Integration</h3>
+                                <p class="text-gray-400 leading-relaxed">Ensure seamless data flow between visual interfaces and backend logic clusters.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-emerald/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="World">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Security Handshake Protocols</h3>
+                                <p class="text-gray-400 leading-relaxed">Enforce enterprise-grade encryption for all telemetry and user data transmission.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-cyan/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Tech">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Modular Component Scaling</h3>
+                                <p class="text-gray-400 leading-relaxed">Enable hot-swappable feature modules without system restart or state loss.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-violet/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Energy">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Visual Rendering Engine</h3>
+                                <p class="text-gray-400 leading-relaxed">Leverage GPU acceleration for fluid 60FPS UI transitions and data visualizations.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-emerald/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Particles">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Legacy Bridge Support</h3>
+                                <p class="text-gray-400 leading-relaxed">Maintain compatibility with previous-gen IDE versions through specialized adapter layers.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 7 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-cyan/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Security">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Telemetry Diagnostics</h3>
+                                <p class="text-gray-400 leading-relaxed">Real-time health monitoring of all active extension instances and user interactions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 8 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-violet/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Future">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Automated QA Cycles</h3>
+                                <p class="text-gray-400 leading-relaxed">Continuous integration testing with 100% coverage on mission-critical logic paths.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 9 -->
+                        <div class="glass rounded-[2.5rem] border border-white/5 overflow-hidden hover:border-accent-emerald/30 transition-all group">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" alt="Code">
+                            </div>
+                            <div class="p-10 text-left">
+                                <h3 class="text-2xl font-bold mb-4">Global Distribution Node</h3>
+                                <p class="text-gray-400 leading-relaxed">Deploy updates globally through a distributed CDN network for zero-downtime rollouts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -497,12 +507,17 @@
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-accent-emerald"></span>
                     <span>System Status: All Operations Normal</span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-10 transition-all duration-300 z-[100] hover:bg-accent-cyan hover:border-accent-cyan group">
+        <i data-lucide="arrow-up" class="w-6 h-6 group-hover:-translate-y-1 transition-transform"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="main.js"></script>

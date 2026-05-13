@@ -28,32 +28,22 @@
                         'accent-violet': '#8b5cf6',
                         'accent-emerald': '#10b981',
                         'accent-rose': '#f43f5e',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
                     }
                 }
             }
         }
     </script>
     
-    <!-- Animation Libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>">
 </head>
+
 <body class="bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden">
-    <!-- Global Animation Background -->
-    <canvas id="particles-canvas" class="fixed inset-0 z-[-1] pointer-events-none opacity-50"></canvas>
+    <!-- Global Animation Background (Removed) -->
+
 
     <!-- Navigation -->
     <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 top-0">
@@ -78,9 +68,11 @@
                         <a href="about.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">About</a>
                         <a href="services.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
                         <a href="extensions.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
-                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case Studies</a>
+                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
                         <a href="pricing.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                        <a href="contact.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                     </div>
+
 
                     <!-- Right Side -->
                     <div class="flex items-center gap-2">
@@ -122,8 +114,7 @@
                 <a href="index.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
                 <a href="home2.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
-                    2</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home 2</a>
                 <a href="about.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">About</a>
                 <a href="services.html"
@@ -131,12 +122,11 @@
                 <a href="extensions.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
                 <a href="case-studies.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case
-                    Studies</a>
-                <a href="contact.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
                 <a href="pricing.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                <a href="contact.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                 <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
                     <!-- Mobile: Theme & RTL toggles -->
                     <div class="flex items-center gap-2 pb-2">
@@ -161,213 +151,143 @@
     <!-- Main Container -->
     <main id="app-container" class="min-h-screen pt-20 sm:pt-24">
         
-        <section id="about-narrative" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <!-- Central Line -->
-            <div class="absolute left-1/2 top-48 bottom-24 w-px bg-gradient-to-b from-accent-cyan via-accent-violet to-accent-rose opacity-20 hidden md:block"></div>
-
-            <div class="text-center mb-32 relative z-10">
-                <span class="inline-block px-4 py-1 rounded-full bg-accent-violet/10 text-accent-violet text-xs font-bold uppercase tracking-widest mb-6">Our Legacy</span>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-8 tracking-tight">The Visionaries</h1>
-                <p class="text-gray-400 text-xl max-w-2xl mx-auto">Architecting the future of developer tools with passion, precision, and performance.</p>
+        <!-- Section 1: Hero Experience -->
+        <section class="relative py-32 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-accent-cyan/5 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <span class="inline-block px-4 py-1 rounded-full bg-accent-cyan/10 text-accent-cyan text-xs font-bold uppercase tracking-widest">Architecting Innovation</span>
+                        <h1 class="text-5xl sm:text-7xl font-black tracking-tight leading-none">THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-violet">ENGINEERS</span> OF EXPERIENCE</h1>
+                        <p class="text-gray-400 text-xl leading-relaxed max-w-xl">We don't just write code; we build the tools that empower the world's most innovative developers. Our mission is to bridge the gap between imagination and implementation.</p>
+                        <div class="flex flex-wrap gap-6 pt-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-accent-cyan"><i data-lucide="zap" class="w-6 h-6"></i></div>
+                                <div>
+                                    <div class="text-white font-bold">50ms</div>
+                                    <div class="text-xs text-gray-500 uppercase font-bold tracking-widest">Latency Goal</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl glass flex items-center justify-center text-accent-violet"><i data-lucide="shield" class="w-6 h-6"></i></div>
+                                <div>
+                                    <div class="text-white font-bold">Enterprise</div>
+                                    <div class="text-xs text-gray-500 uppercase font-bold tracking-widest">Grade Security</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 relative">
+                        <div class="space-y-4 pt-12">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" class="rounded-3xl border border-white/10 shadow-2xl" alt="Dev 1">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="rounded-3xl border border-white/10 shadow-2xl" alt="Dev 2">
+                        </div>
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800" class="rounded-3xl border border-white/10 shadow-2xl" alt="Dev 3">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" class="rounded-3xl border border-white/10 shadow-2xl" alt="Dev 4">
+                        </div>
+                        <div class="absolute -inset-4 bg-accent-cyan/10 rounded-full blur-[100px] -z-10"></div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="relative z-10 space-y-48">
-                <!-- Step 1: Left -->
-                <div class="flex flex-col md:flex-row items-center justify-between gap-12 group">
-                    <div class="md:w-5/12 text-center md:text-right order-2 md:order-1">
-                        <div class="inline-block p-4 rounded-2xl bg-accent-cyan/10 text-accent-cyan mb-6">
-                            <i data-lucide="target" class="w-10 h-10"></i>
-                        </div>
-                        <h2 class="text-4xl font-bold mb-6">Our Mission</h2>
-                        <p class="text-gray-400 text-lg leading-relaxed">Empowering developers by creating tools that are not just functional, but delightful to use. We believe in the power of DX to transform global productivity.</p>
+        <!-- Section 2: Detailed Milestones (No Empty Space) -->
+        <section class="py-24 bg-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+                    <div class="glass p-12 border border-white/5 hover:bg-white/10 transition-all group">
+                        <div class="text-4xl font-black text-accent-cyan mb-2">2016</div>
+                        <h4 class="text-lg font-bold mb-4">Foundation</h4>
+                        <p class="text-gray-400 text-sm">Initial exploration into custom DSLs and early editor integrations.</p>
                     </div>
-                    <!-- Marker -->
-                    <div class="w-12 h-12 rounded-full glass border-4 border-accent-cyan/30 flex items-center justify-center relative z-20 hidden md:flex">
-                        <div class="w-3 h-3 rounded-full bg-accent-cyan"></div>
+                    <div class="glass p-12 border border-white/5 hover:bg-white/10 transition-all group">
+                        <div class="text-4xl font-black text-accent-violet mb-2">2018</div>
+                        <h4 class="text-lg font-bold mb-4">The Pivot</h4>
+                        <p class="text-gray-400 text-sm">Focus shifted exclusively to the VSCode ecosystem and Language Servers.</p>
                     </div>
-                    <div class="md:w-5/12 order-1 md:order-2">
-                        <div class="glass p-4 rounded-[2rem] border border-white/10 rotate-2 group-hover:rotate-0 transition-transform duration-500">
-                            <img src="images/about/portfolio-1.jpg" alt="Mission" class="rounded-[1.5rem] grayscale group-hover:grayscale-0 transition-all duration-700">
-                        </div>
+                    <div class="glass p-12 border border-white/5 hover:bg-white/10 transition-all group">
+                        <div class="text-4xl font-black text-accent-emerald mb-2">2021</div>
+                        <h4 class="text-lg font-bold mb-4">Enterprise Era</h4>
+                        <p class="text-gray-400 text-sm">Partnering with Fortune 500 companies for internal tool optimization.</p>
+                    </div>
+                    <div class="glass p-12 border border-white/5 hover:bg-white/10 transition-all group">
+                        <div class="text-4xl font-black text-accent-rose mb-2">2024+</div>
+                        <h4 class="text-lg font-bold mb-4">Future Forge</h4>
+                        <p class="text-gray-400 text-sm">Pioneering AI-integrated developer workflows and next-gen LSP features.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Step 2: Right -->
-                <div class="flex flex-col md:flex-row items-center justify-between gap-12 group">
-                    <div class="md:w-5/12">
-                        <div class="glass p-4 rounded-[2rem] border border-white/10 -rotate-2 group-hover:rotate-0 transition-transform duration-500">
-                            <img src="images/about/portfolio-2.jpg" alt="Journey" class="rounded-[1.5rem] grayscale group-hover:grayscale-0 transition-all duration-700">
-                        </div>
-                    </div>
-                    <!-- Marker -->
-                    <div class="w-12 h-12 rounded-full glass border-4 border-accent-violet/30 flex items-center justify-center relative z-20 hidden md:flex">
-                        <div class="w-3 h-3 rounded-full bg-accent-violet"></div>
-                    </div>
-                    <div class="md:w-5/12 text-center md:text-left">
-                        <div class="inline-block p-4 rounded-2xl bg-accent-violet/10 text-accent-violet mb-6">
-                            <i data-lucide="rocket" class="w-10 h-10"></i>
-                        </div>
-                        <h2 class="text-4xl font-bold mb-6">The Journey</h2>
-                        <p class="text-gray-400 text-lg leading-relaxed mb-6">From solo experimentation to leading consultancy. Our path is defined by a constant pursuit of technical mastery and innovative thinking.</p>
-                        <div class="flex gap-4 justify-center md:justify-start">
-                             <span class="text-2xl font-black text-white">8+ <span class="text-xs font-normal text-gray-500 uppercase block">Years</span></span>
-                             <span class="text-2xl font-black text-white">100+ <span class="text-xs font-normal text-gray-500 uppercase block">Projects</span></span>
-                        </div>
+        <!-- Section 3: Deep Technical Values -->
+        <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-20">
+                <div class="lg:w-1/3 space-y-8">
+                    <h2 class="text-4xl sm:text-5xl font-black leading-tight">CORE <span class="text-accent-cyan">VALUES</span> DRIVING OUR CODE</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg">We believe that the best software is built on a foundation of unyielding principles and radical transparency.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-white font-bold"><i data-lucide="check-circle-2" class="text-accent-cyan"></i> 100% Type Safety</div>
+                        <div class="flex items-center gap-4 text-white font-bold"><i data-lucide="check-circle-2" class="text-accent-cyan"></i> Zero-Dependency Core</div>
+                        <div class="flex items-center gap-4 text-white font-bold"><i data-lucide="check-circle-2" class="text-accent-cyan"></i> Sub-millisecond Event Loops</div>
                     </div>
                 </div>
+                <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="cpu" class="w-24 h-24"></i></div>
+                        <h3 class="text-2xl font-black mb-4">Performance First</h3>
+                        <p class="text-gray-400">Our extensions are optimized for speed. We minimize main thread blocking to ensure zero editor lag.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="layers" class="w-24 h-24"></i></div>
+                        <h3 class="text-2xl font-black mb-4">Deep Integration</h3>
+                        <p class="text-gray-400">We leverage internal APIs to provide native-feeling experiences that are impossible with basic plugins.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="eye" class="w-24 h-24"></i></div>
+                        <h3 class="text-2xl font-black mb-4">Visual Precision</h3>
+                        <p class="text-gray-400">Every pixel in our webviews is considered. We build responsive, accessible, and stunning UIs.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="users" class="w-24 h-24"></i></div>
+                        <h3 class="text-2xl font-black mb-4">Developer Centric</h3>
+                        <p class="text-gray-400">Built by developers, for developers. We understand the pain points of modern workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Step 3: Philosophy (Centered/Large) -->
-                <div class="max-w-4xl mx-auto text-center relative group">
-                    <div class="absolute -inset-10 bg-accent-emerald/5 rounded-full blur-[120px]"></div>
-                    <div class="relative z-10 glass p-16 rounded-[3rem] border border-white/5">
-                        <div class="w-20 h-20 bg-accent-emerald/10 rounded-3xl flex items-center justify-center mx-auto mb-10">
-                            <i data-lucide="heart" class="w-10 h-10 text-accent-emerald"></i>
-                        </div>
-                        <h2 class="text-3xl sm:text-5xl font-bold mb-8">Core Philosophy</h2>
-                        <p class="text-gray-400 text-xl leading-relaxed mb-10">"Simplicity is the ultimate sophistication. Every line of code should make complex tasks feel effortless."</p>
-                        <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 sm:gap-8">
-                             <div class="flex items-center gap-3 text-accent-emerald font-bold uppercase tracking-widest text-xs"><i data-lucide="zap" class="w-4 h-4"></i> Performance</div>
-                             <div class="flex items-center gap-3 text-accent-emerald font-bold uppercase tracking-widest text-xs"><i data-lucide="layout" class="w-4 h-4"></i> Intuition</div>
-                             <div class="flex items-center gap-3 text-accent-emerald font-bold uppercase tracking-widest text-xs"><i data-lucide="shield" class="w-4 h-4"></i> Integrity</div>
-                        </div>
-                    </div>
+        <!-- Section 4: Studio Presence (Full Width Collage) -->
+        <section class="py-24 overflow-hidden bg-white/5">
+            <div class="max-w-[100vw] overflow-hidden">
+                <div class="flex gap-4 animate-scroll whitespace-nowrap">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800" class="w-[400px] h-[300px] object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" alt="S1">
+                    <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=800" class="w-[400px] h-[300px] object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" alt="S2">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" class="w-[400px] h-[300px] object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" alt="S3">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" class="w-[400px] h-[300px] object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" alt="S4">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" class="w-[400px] h-[300px] object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" alt="S5">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" class="w-[400px] h-[300px] object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" alt="S6">
                 </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 text-center mt-12">
+                 <h2 class="text-2xl font-bold tracking-widest uppercase text-accent-cyan/50">Our Global Footprint</h2>
+            </div>
+        </section>
 
-                <!-- Step 4: Left Again -->
-                <div class="flex flex-col md:flex-row items-center justify-between gap-12 group">
-                    <div class="md:w-5/12 text-center md:text-right order-2 md:order-1">
-                        <div class="inline-block p-4 rounded-2xl bg-accent-rose/10 text-accent-rose mb-6">
-                            <i data-lucide="award" class="w-10 h-10"></i>
-                        </div>
-                        <h2 class="text-4xl font-bold mb-6">Technical Mastery</h2>
-                        <p class="text-gray-400 text-lg leading-relaxed">Deep expertise in VSCode API, LSP, DAP, and the TypeScript ecosystem allows us to solve challenges that define the industry standard.</p>
-                    </div>
-                    <!-- Marker -->
-                    <div class="w-12 h-12 rounded-full glass border-4 border-accent-rose/30 flex items-center justify-center relative z-20 hidden md:flex">
-                        <div class="w-3 h-3 rounded-full bg-accent-rose"></div>
-                    </div>
-                    <div class="md:w-5/12 order-1 md:order-2">
-                         <div class="relative">
-                            <div class="absolute inset-0 bg-accent-rose/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <img src="images/about/portfolio-4.jpg" alt="Mastery" class="relative rounded-[2rem] border border-white/10 group-hover:scale-105 transition-transform duration-500">
-                         </div>
-                    </div>
+        <!-- Section 5: The Philosophy -->
+        <section class="py-32 relative">
+            <div class="absolute inset-0 bg-accent-violet/5 -z-10"></div>
+            <div class="max-w-4xl mx-auto px-4 text-center space-y-12">
+                <i data-lucide="quote" class="w-16 h-16 text-accent-violet mx-auto opacity-20"></i>
+                <h2 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight italic text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">"Simplicity is the ultimate sophistication. Every line of code should make complex tasks feel effortless."</h2>
+                <div class="w-24 h-1 bg-accent-violet mx-auto rounded-full"></div>
+                <div class="space-y-4">
+                    <h5 class="text-xl font-bold">The Engineering Collective</h5>
+                    <p class="text-gray-500 uppercase tracking-widest text-sm">VSCode Dev Leadership</p>
                 </div>
+            </div>
+        </section>
 
-                <!-- Step 5: Community (Wide/Bottom) -->
-                <div class="glass rounded-[2rem] sm:rounded-[4rem] p-8 sm:p-20 border border-white/5 overflow-hidden relative group">
-                    <div class="absolute top-0 right-0 p-10 opacity-5 group-hover:opacity-10 transition-opacity">
-                         <i data-lucide="globe" class="w-64 h-64 text-white"></i>
-                    </div>
-                    <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-                        <div>
-                             <h2 class="text-3xl sm:text-5xl font-black mb-8 text-center md:text-left">Community Heart</h2>
-                             <p class="text-gray-400 text-lg mb-10 leading-relaxed">We believe in giving back. From contributing to the VSCode core to mentoring the next generation, we are building a better future together.</p>
-                             <div class="flex gap-8 items-center justify-center md:justify-start">
-                                 <i data-lucide="github" class="w-8 h-8 text-white/40 hover:text-white transition-colors cursor-pointer"></i>
-                                 <i data-lucide="twitter" class="w-8 h-8 text-white/40 hover:text-white transition-colors cursor-pointer"></i>
-                                 <i data-lucide="linkedin" class="w-8 h-8 text-white/40 hover:text-white transition-colors cursor-pointer"></i>
-                             </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                             <img src="images/about/portfolio-5.jpg" alt="Comm 1" class="rounded-3xl border border-white/10 group-hover:-translate-y-2 transition-transform">
-                             <img src="images/about/portfolio-6.jpg" alt="Comm 2" class="rounded-3xl border border-white/10 group-hover:translate-y-2 transition-transform">
-                        </div>
-                    </div>
-                </div>
-                <!-- Section: Studio Snapshots (3x3 Image Grid) -->
-                <div class="space-y-16 pt-24">
-                    <div class="text-center">
-                        <span class="inline-block px-4 py-1 rounded-full bg-accent-cyan/10 text-accent-cyan text-xs font-bold uppercase tracking-widest mb-6">Our Environment</span>
-                        <h2 class="text-3xl sm:text-5xl font-black mb-4">STUDIO <span class="text-accent-cyan">SNAPSHOTS</span></h2>
-                        <div class="w-24 h-1 bg-accent-cyan mx-auto rounded-full"></div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Studio">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Collab">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Team">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Office">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Meeting">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Design">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Creative">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Support">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="aspect-square glass rounded-[2rem] overflow-hidden border border-white/5 relative group">
-                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Growth">
-                            <div class="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section: Our Principles (3x3 Text Grid) -->
-                <div class="space-y-16 pt-24">
-                    <div class="text-center">
-                        <span class="inline-block px-4 py-1 rounded-full bg-accent-rose/10 text-accent-rose text-xs font-bold uppercase tracking-widest mb-6">Our DNA</span>
-                        <h2 class="text-3xl sm:text-5xl font-black mb-4">OUR <span class="text-accent-rose">PRINCIPLES</span></h2>
-                        <div class="w-24 h-1 bg-accent-rose mx-auto rounded-full"></div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Radical Clarity</h3>
-                            <p class="text-gray-400">We eliminate noise to focus on what matters. Clear code leads to clear thinking and better outcomes.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Iterative Excellence</h3>
-                            <p class="text-gray-400">Greatness is achieved through continuous refinement. We ship early and polish until it shines.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">User Obsession</h3>
-                            <p class="text-gray-400">We build for the human on the other side of the screen. Empathy is our core development tool.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Open Collaboration</h3>
-                            <p class="text-gray-400">The best ideas often come from the collective. We foster an environment of shared knowledge.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Fearless Innovation</h3>
-                            <p class="text-gray-400">We aren't afraid to break conventions to find a better way. Progress requires calculated risks.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Deep Integrity</h3>
-                            <p class="text-gray-400">Doing the right thing, especially when it's hard. Our code and our word are our bond.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Infinite Learning</h3>
-                            <p class="text-gray-400">The tech landscape is always shifting. We remain perpetual students of our craft.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Resilient Design</h3>
-                            <p class="text-gray-400">Building for longevity. Our systems are designed to adapt and thrive over time.</p>
-                        </div>
-                        <div class="p-8 border-l-4 border-accent-rose bg-white/5 rounded-r-3xl group hover:bg-white/10 transition-all">
-                            <h3 class="text-2xl font-bold mb-4 group-hover:text-accent-rose transition-colors">Purposeful Craft</h3>
-                            <p class="text-gray-400">Every pixel and semicolon has a reason. We don't just build, we architect with intent.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -516,12 +436,17 @@
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-accent-emerald"></span>
                     <span>System Status: All Operations Normal</span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-10 transition-all duration-300 z-[100] hover:bg-accent-cyan hover:border-accent-cyan group">
+        <i data-lucide="arrow-up" class="w-6 h-6 group-hover:-translate-y-1 transition-transform"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="main.js"></script>

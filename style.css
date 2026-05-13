@@ -61,7 +61,7 @@ body {
     background-size: 50px 50px;
 }
 
-/* Holographic Effect */
+/* Holographic Effect (Simplified) */
 .holographic {
     background: linear-gradient(135deg, 
         rgba(6, 182, 212, 0.1) 0%, 
@@ -69,98 +69,65 @@ body {
         rgba(16, 185, 129, 0.1) 50%, 
         rgba(244, 63, 94, 0.1) 75%, 
         rgba(6, 182, 212, 0.1) 100%);
-    background-size: 400% 400%;
-    animation: holographic 8s ease infinite;
-}
-@keyframes holographic {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background-size: 100% 100%;
 }
 
-/* 3D Perspective & Tilt */
-.perspective-1000 { perspective: 1000px; }
-.preserve-3d { transform-style: preserve-3d; }
-.backface-hidden { backface-visibility: hidden; }
+/* 3D Perspective & Tilt (Removed) */
+.perspective-1000 { perspective: none; }
+.preserve-3d { transform-style: flat; }
+.backface-hidden { backface-visibility: visible; }
 
 .tilt-card {
-    transition: transform 0.1s ease-out;
-    transform-style: preserve-3d;
+    transition: none;
+    transform-style: flat;
 }
 .tilt-content {
-    transform: translateZ(50px);
+    transform: none;
 }
 
-/* Button 3D Press */
+/* Button 3D Press (Simplified) */
 .btn-3d {
-    transition: all 0.1s;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+    transition: none;
+    box-shadow: none;
 }
 .btn-3d:active {
-    transform: translateY(4px);
-    box-shadow: 0 0 0 rgba(0,0,0,0.3);
+    transform: none;
+    box-shadow: none;
 }
 
-/* Animations */
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
+/* Animations (Removed) */
 .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: none;
 }
 
-@keyframes glow {
-    0% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3); }
-    100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(6, 182, 212, 0.5); }
-}
-
-/* Typing Effect Cursor */
+/* Typing Effect Cursor (Simplified) */
 .typing-cursor::after {
-    content: '|';
-    animation: blink 1s step-end infinite;
+    content: '';
 }
-@keyframes blink { 50% { opacity: 0; } }
 
-/* Page Transitions */
+/* Page Transitions (Simplified) */
 .page-section {
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease-out;
-}
-.page-section.active {
     display: block;
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
-/* Dashboard Sections */
+
+/* Dashboard Sections (Simplified) */
 .dashboard-section {
     display: none;
-    opacity: 0;
-    transition: all 0.3s ease-out;
+    opacity: 1;
 }
 .dashboard-section.active {
     display: block;
-    opacity: 1;
 }
 
-/* Status Indicator */
+/* Status Indicator (Simplified) */
 .status-pulse {
     position: relative;
 }
 .status-pulse::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: inherit;
-    opacity: 0.4;
-    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-@keyframes ping {
-    75%, 100% { transform: scale(2); opacity: 0; }
+    display: none;
 }
 
 /* Dashboard Sidebar */

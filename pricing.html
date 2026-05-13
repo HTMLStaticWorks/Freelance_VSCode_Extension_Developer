@@ -33,17 +33,15 @@
         }
     </script>
     
-    <!-- Animation Libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>">
 </head>
 <body class="bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden">
-    <!-- Global Animation Background -->
-    <canvas id="particles-canvas" class="fixed inset-0 z-[-1] pointer-events-none opacity-50"></canvas>
+    <!-- Global Animation Background (Removed) -->
+
 
     <!-- Navigation -->
     <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 top-0">
@@ -69,9 +67,11 @@
                         <a href="about.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                         <a href="services.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
                         <a href="extensions.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
-                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case Studies</a>
+                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
                         <a href="pricing.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">Pricing</a>
+                        <a href="contact.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                     </div>
+
 
                     <!-- Right Side -->
                     <div class="flex items-center gap-2">
@@ -114,8 +114,7 @@
                 <a href="index.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
                 <a href="home2.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
-                    2</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home 2</a>
                 <a href="about.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                 <a href="services.html"
@@ -123,12 +122,11 @@
                 <a href="extensions.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
                 <a href="case-studies.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Case
-                    Studies</a>
-                <a href="contact.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
                 <a href="pricing.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Pricing</a>
+                <a href="contact.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                 <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
                     <!-- Mobile: Theme & RTL toggles -->
                     <div class="flex items-center gap-2 pb-2">
@@ -155,9 +153,9 @@
         
         <section id="pricing-tiers" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-24">
-                <span class="text-accent-emerald font-mono text-sm uppercase tracking-widest block mb-4">// Scalable Value</span>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-8 tracking-tight">Investment Plans</h1>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">Scale your development team with elite-grade tools and strategic consulting.</p>
+                <span class="text-accent-cyan font-mono text-sm uppercase tracking-widest block mb-4 animate-pulse">// Scalable Architecture</span>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-8 tracking-tight text-white">Investment <span class="text-accent-cyan">Plans</span></h1>
+                <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">Strategic pricing models designed to scale with your enterprise development needs.</p>
             </div>
 
             <div class="flex flex-wrap justify-center gap-8 mb-32">
@@ -432,12 +430,17 @@
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-accent-emerald"></span>
                     <span>System Status: All Operations Normal</span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-10 transition-all duration-300 z-[100] hover:bg-accent-cyan hover:border-accent-cyan group">
+        <i data-lucide="arrow-up" class="w-6 h-6 group-hover:-translate-y-1 transition-transform"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="main.js"></script>

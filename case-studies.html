@@ -34,17 +34,15 @@
         }
     </script>
     
-    <!-- Animation Libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>">
 </head>
 <body class="bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden">
-    <!-- Global Animation Background -->
-    <canvas id="particles-canvas" class="fixed inset-0 z-[-1] pointer-events-none opacity-50"></canvas>
+    <!-- Global Animation Background (Removed) -->
+
 
     <!-- Navigation -->
     <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 top-0">
@@ -69,9 +67,11 @@
                         <a href="about.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                         <a href="services.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
                         <a href="extensions.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
-                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">Case Studies</a>
+                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">Studies</a>
                         <a href="pricing.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                        <a href="contact.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                     </div>
+
 
                     <!-- Right Side -->
                     <div class="flex items-center gap-2">
@@ -113,8 +113,7 @@
                 <a href="index.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
                 <a href="home2.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
-                    2</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home 2</a>
                 <a href="about.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                 <a href="services.html"
@@ -122,12 +121,11 @@
                 <a href="extensions.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
                 <a href="case-studies.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Case
-                    Studies</a>
-                <a href="contact.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Studies</a>
                 <a href="pricing.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Pricing</a>
+                <a href="contact.html"
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                 <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
                     <!-- Mobile: Theme & RTL toggles -->
                     <div class="flex items-center gap-2 pb-2">
@@ -152,189 +150,237 @@
     <!-- Main Container -->
     <main id="app-container" class="min-h-screen pt-20 sm:pt-24">
         
-        <section id="case-studies-grid" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-24">
-                <span class="text-accent-violet font-mono text-sm uppercase tracking-widest block mb-4">// Technical Archives</span>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-8 tracking-tight">Case Studies</h1>
-                <p class="text-gray-400 text-xl max-w-2xl mx-auto">Deep dives into the technical architecture and business impact of our most significant engineering challenges.</p>
-            </div>
-
-            <!-- Staggered Technical Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-auto">
-                
-                <!-- Case 1: Fintech LSP (Wide) -->
-                <div class="md:col-span-8 glass rounded-[3rem] overflow-hidden border border-white/5 hover:border-accent-cyan/30 transition-all group relative min-h-[500px]">
-                    <div class="absolute inset-0">
-                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent"></div>
-                    </div>
-                    <div class="relative z-10 p-12 h-full flex flex-col justify-end">
-                        <div class="px-4 py-1 rounded-full border border-accent-cyan/30 text-accent-cyan text-xs font-bold inline-block mb-6 uppercase tracking-widest self-start">Fintech Core</div>
-                        <h2 class="text-3xl sm:text-5xl font-black text-white mb-4">LSP Scaling</h2>
-                        <p class="text-gray-300 text-lg max-w-xl mb-8">Incremental parsing for multi-million line codebases, reducing IDE lag by 80%.</p>
-                        <div class="flex gap-4">
-                            <div class="glass px-6 py-3 rounded-2xl border border-white/10">
-                                <div class="text-2xl font-black text-accent-cyan">80%</div>
-                                <div class="text-[10px] text-gray-500 uppercase font-bold">Efficiency</div>
-                            </div>
-                            <div class="glass px-6 py-3 rounded-2xl border border-white/10">
-                                <div class="text-2xl font-black text-accent-cyan">10M+</div>
-                                <div class="text-[10px] text-gray-500 uppercase font-bold">Lines</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 2: AI (Tall) -->
-                <div class="md:col-span-4 glass rounded-[3rem] overflow-hidden border border-white/5 hover:border-accent-violet/30 transition-all group relative min-h-[500px]">
-                    <div class="absolute inset-0">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-dark-bg/60 group-hover:bg-dark-bg/40 transition-colors"></div>
-                    </div>
-                    <div class="relative z-10 p-10 h-full flex flex-col justify-between">
-                        <div class="w-12 h-12 bg-accent-violet/20 rounded-xl flex items-center justify-center text-accent-violet">
-                            <i data-lucide="cpu" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-3xl font-bold text-white mb-4">Neural Autocomplete</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Bespoke LLM integration for proprietary enterprise frameworks.</p>
-                            <button class="w-full py-4 rounded-2xl bg-accent-violet text-white font-bold hover:scale-105 transition-all">Read Brief</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 3: Cloud (Normal) -->
-                <div class="md:col-span-6 glass rounded-[3rem] overflow-hidden border border-white/5 hover:border-accent-emerald/30 transition-all group p-10 flex flex-col justify-between relative min-h-[400px]">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-30 transition-opacity">
-                         <i data-lucide="cloud" class="w-32 h-32 text-accent-emerald"></i>
-                    </div>
+        <!-- Section 1: Technical Archives Hero -->
+        <section class="relative py-24 overflow-hidden border-b border-white/5 bg-accent-violet/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <div class="px-4 py-1 rounded-full bg-accent-emerald/10 text-accent-emerald text-xs font-bold inline-block mb-6 uppercase tracking-widest">Enterprise Cloud</div>
-                        <h3 class="text-4xl font-bold text-white mb-4">Cloud IDE Architecture</h3>
-                        <p class="text-gray-400">Architecting zero-trust browser-based environments for 5,000+ developers.</p>
+                        <span class="inline-block px-4 py-1 rounded-full bg-accent-violet/10 text-accent-violet text-xs font-bold uppercase tracking-widest mb-6">Case Repository</span>
+                        <h1 class="text-6xl sm:text-8xl font-black mb-8 tracking-tighter leading-none">TECH <span class="text-accent-violet">DEEP</span> DIVES</h1>
+                        <p class="text-gray-400 text-xl max-w-xl leading-relaxed">Systematic breakdowns of our most complex engineering triumphs. From aerospace DAP to multi-million line LSP architectures.</p>
                     </div>
-                    <div class="flex items-center gap-4 text-accent-emerald font-bold cursor-pointer group-hover:gap-6 transition-all">
-                        <span>Technical Deep Dive</span>
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </div>
-                </div>
-
-                <!-- Case 4: Security (Normal) -->
-                <div class="md:col-span-6 glass rounded-[3rem] overflow-hidden border border-white/5 hover:border-accent-rose/30 transition-all group p-10 flex flex-col justify-between relative min-h-[400px]">
-                    <div class="absolute bottom-0 right-0 p-8 opacity-10 group-hover:opacity-30 transition-opacity">
-                         <i data-lucide="shield-check" class="w-32 h-32 text-accent-rose"></i>
-                    </div>
-                    <div>
-                        <div class="px-4 py-1 rounded-full bg-accent-rose/10 text-accent-rose text-xs font-bold inline-block mb-6 uppercase tracking-widest">Security Audit</div>
-                        <h3 class="text-4xl font-bold text-white mb-4">Marketplace Hardening</h3>
-                        <p class="text-gray-400">Remediating critical XSS and sandbox vulnerabilities in top-tier extensions.</p>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-mono border border-white/10 uppercase">Sanitization</span>
-                        <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-mono border border-white/10 uppercase">Isolation</span>
-                    </div>
-                </div>
-
-                <!-- Case 5: Aerospace (Tall) -->
-                <div class="md:col-span-5 glass rounded-[3rem] overflow-hidden border border-white/5 hover:border-accent-cyan/30 transition-all group relative min-h-[500px]">
-                    <div class="absolute inset-0">
-                         <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
-                         <div class="absolute inset-0 bg-dark-bg/60 group-hover:bg-dark-bg/40 transition-colors"></div>
-                    </div>
-                    <div class="relative z-10 p-12 h-full flex flex-col justify-end">
-                        <div class="w-16 h-16 bg-accent-cyan/20 rounded-full flex items-center justify-center text-accent-cyan mb-8 border border-accent-cyan/30 animate-pulse">
-                            <i data-lucide="satellite" class="w-8 h-8"></i>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="glass p-6 rounded-3xl border border-white/5 text-center">
+                            <div class="text-3xl font-black text-white">45+</div>
+                            <div class="text-[10px] text-gray-500 uppercase font-bold">Projects</div>
                         </div>
-                        <h3 class="text-4xl font-bold text-white mb-4">Space-Grade DAP</h3>
-                        <p class="text-gray-400 mb-8 leading-relaxed">Real-time telemetry visualization for aerospace systems within VSCode.</p>
-                        <button class="px-8 py-4 rounded-2xl border border-accent-cyan/30 text-accent-cyan font-bold hover:bg-accent-cyan hover:text-white transition-all">View Protocol</button>
-                    </div>
-                </div>
-
-                <!-- Case 6: Open Source (Wide Bottom) -->
-                <div class="md:col-span-7 glass rounded-[3rem] overflow-hidden border border-white/5 hover:border-accent-violet/30 transition-all group p-12 relative min-h-[400px] flex flex-col justify-center">
-                    <div class="absolute inset-y-0 right-0 w-1/2 opacity-10 group-hover:opacity-20 transition-all hidden md:block">
-                         <i data-lucide="github" class="w-full h-full text-white"></i>
-                    </div>
-                    <div class="relative z-10">
-                        <h2 class="text-3xl sm:text-5xl font-black text-white mb-6">Core Engine</h2>
-                        <p class="text-gray-400 text-xl max-w-md mb-8">Architecting advanced webview capabilities for the VSCode core repository.</p>
-                        <div class="flex items-center gap-12">
-                            <div>
-                                <div class="text-4xl font-black text-white">200+</div>
-                                <div class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">PRs Merged</div>
-                            </div>
-                            <div>
-                                <div class="text-4xl font-black text-white">Top 1%</div>
-                                <div class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Contributor</div>
-                            </div>
+                        <div class="glass p-6 rounded-3xl border border-white/5 text-center">
+                            <div class="text-3xl font-black text-white">12</div>
+                            <div class="text-[10px] text-gray-500 uppercase font-bold">Industries</div>
+                        </div>
+                        <div class="glass p-6 rounded-3xl border border-white/5 text-center">
+                            <div class="text-3xl font-black text-white">100%</div>
+                            <div class="text-[10px] text-gray-500 uppercase font-bold">Success</div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-
-            <!-- Section: Performance Metrics (3x3 Text Grid) -->
-            <div class="space-y-16 pt-32 pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <span class="inline-block px-4 py-1 rounded-full bg-accent-emerald/10 text-accent-emerald text-xs font-bold uppercase tracking-widest mb-6">Outcome Data</span>
-                    <h2 class="text-3xl sm:text-5xl font-black mb-4">IMPACT <span class="text-accent-emerald">METRICS</span></h2>
-                    <div class="w-24 h-1 bg-accent-emerald mx-auto rounded-full"></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">94%</div>
-                        <h3 class="text-xl font-bold mb-4">Adoption Rate</h3>
-                        <p class="text-gray-400 text-sm">Average team adoption within 30 days of deployment.</p>
-                    </div>
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">12ms</div>
-                        <h3 class="text-xl font-bold mb-4">Median Latency</h3>
-                        <p class="text-gray-400 text-sm">Response time for critical IntelliSense triggers.</p>
-                    </div>
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">$2M</div>
-                        <h3 class="text-xl font-bold mb-4">Cost Savings</h3>
-                        <p class="text-gray-400 text-sm">Annual productivity savings for enterprise teams.</p>
-                    </div>
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">0.02%</div>
-                        <h3 class="text-xl font-bold mb-4">Error Freq</h3>
-                        <p class="text-gray-400 text-sm">Telemetry-reported crash rate globally.</p>
-                    </div>
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">15k+</div>
-                        <h3 class="text-xl font-bold mb-4">Active Nodes</h3>
-                        <p class="text-gray-400 text-sm">Concurrent server instances in the cloud.</p>
-                    </div>
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">4.9/5</div>
-                        <h3 class="text-xl font-bold mb-4">Satisfaction</h3>
-                        <p class="text-gray-400 text-sm">Verified marketplace rating (100k+ reviews).</p>
-                    </div>
-                    <!-- New Cards -->
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">180+</div>
-                        <h3 class="text-xl font-bold mb-4">Global Nodes</h3>
-                        <p class="text-gray-400 text-sm">Distributed edge points for low-latency LSP synchronization.</p>
-                    </div>
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">99.99%</div>
-                        <h3 class="text-xl font-bold mb-4">Reliability</h3>
-                        <p class="text-gray-400 text-sm">Uptime for mission-critical extension infrastructure.</p>
-                    </div>
-                    <div class="glass p-10 rounded-[3rem] border border-white/5 group hover:bg-accent-emerald/5 transition-all text-center">
-                        <div class="text-accent-emerald font-black text-5xl mb-4 group-hover:scale-110 transition-transform">SOC2</div>
-                        <h3 class="text-xl font-bold mb-4">Compliance</h3>
-                        <p class="text-gray-400 text-sm">Enterprise-grade security standards for all deployments.</p>
-                    </div>
-                </div>
-            </div>
-
             </div>
         </section>
 
+        <!-- Section 2: Case Study Matrix (High Density) -->
+        <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group p-8 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="w-12 h-12 bg-accent-cyan/10 rounded-xl flex items-center justify-center text-accent-cyan"><i data-lucide="database" class="w-6 h-6"></i></div>
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Fintech Core</span>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6">FinScale LSP</h3>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest mb-1">Challenge</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Multi-million line monorepo causing 5s+ IDE latency during symbol lookups.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest mb-1">Solution</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Incremental AST caching and multi-threaded indexing engine.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest mb-1">Outcome</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">80% reduction in lag. Median lookup time reduced to 12ms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="pricing.html" class="w-full py-4 rounded-xl border border-white/10 group-hover:bg-accent-cyan group-hover:text-white transition-all text-sm font-bold text-center block">View Technical Paper</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-violet/30 transition-all group p-8 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="w-12 h-12 bg-accent-violet/10 rounded-xl flex items-center justify-center text-accent-violet"><i data-lucide="brain-circuit" class="w-6 h-6"></i></div>
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">AI Intelligence</span>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6">NeuralPilot</h3>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest mb-1">Challenge</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Integrating proprietary LLMs with real-time editor telemetry safely.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest mb-1">Solution</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Bespoke bridge adapter with local PII sanitization layer.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest mb-1">Outcome</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">94% adoption rate among 500+ internal engineers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="pricing.html" class="w-full py-4 rounded-xl border border-white/10 group-hover:bg-accent-violet group-hover:text-white transition-all text-sm font-bold text-center block">View Technical Paper</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-emerald/30 transition-all group p-8 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center text-accent-emerald"><i data-lucide="cloud" class="w-6 h-6"></i></div>
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Cloud Systems</span>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6">CloudNexus IDE</h3>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-[10px] text-accent-emerald font-bold uppercase tracking-widest mb-1">Challenge</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Maintaining zero-trust security in browser-based VSCode forks.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-emerald font-bold uppercase tracking-widest mb-1">Solution</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Encapsulated Webview isolation with ephemeral session tokens.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-emerald font-bold uppercase tracking-widest mb-1">Outcome</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Zero security breaches over 200k active developer hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="pricing.html" class="w-full py-4 rounded-xl border border-white/10 group-hover:bg-accent-emerald group-hover:text-white transition-all text-sm font-bold text-center block">View Technical Paper</a>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-rose/30 transition-all group p-8 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="w-12 h-12 bg-accent-rose/10 rounded-xl flex items-center justify-center text-accent-rose"><i data-lucide="shield-alert" class="w-6 h-6"></i></div>
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Security Audit</span>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6">Hardened Marketplace</h3>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-[10px] text-accent-rose font-bold uppercase tracking-widest mb-1">Challenge</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Critical XSS vulnerabilities in popular extension templates.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-rose font-bold uppercase tracking-widest mb-1">Solution</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Automated static analysis pipeline with CVE cross-referencing.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-rose font-bold uppercase tracking-widest mb-1">Outcome</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Successfully remediated 15+ CVEs before public disclosure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="pricing.html" class="w-full py-4 rounded-xl border border-white/10 group-hover:bg-accent-rose group-hover:text-white transition-all text-sm font-bold text-center block">View Technical Paper</a>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group p-8 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="w-12 h-12 bg-accent-cyan/10 rounded-xl flex items-center justify-center text-accent-cyan"><i data-lucide="rocket" class="w-6 h-6"></i></div>
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Aerospace</span>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6">AeroView DAP</h3>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest mb-1">Challenge</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Visualizing 1GB/s telemetry streams in a VSCode sidebar.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest mb-1">Solution</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">SharedArrayBuffer implementation with GPU-accelerated rendering.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest mb-1">Outcome</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Real-time debugging of satellites during active launch phases.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full py-4 rounded-xl border border-white/10 group-hover:bg-accent-cyan group-hover:text-white transition-all text-sm font-bold">View Technical Paper</button>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-violet/30 transition-all group p-8 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="w-12 h-12 bg-accent-violet/10 rounded-xl flex items-center justify-center text-accent-violet"><i data-lucide="git-merge" class="w-6 h-6"></i></div>
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Open Source</span>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6">VSCode Core</h3>
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest mb-1">Challenge</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Standardizing webview communication protocols for all extensions.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest mb-1">Solution</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Architecting the MessagePort-based IPC layer for webviews.</p>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest mb-1">Outcome</div>
+                                <p class="text-gray-400 text-sm leading-relaxed">Merged into VSCode 1.75+, now used by 30k+ extensions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full py-4 rounded-xl border border-white/10 group-hover:bg-accent-violet group-hover:text-white transition-all text-sm font-bold">View Technical Paper</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Industry Influence -->
+        <section class="py-24 bg-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-[0.3em]">Institutional Trust</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+                    <div class="text-2xl font-black">MICROSOFT</div>
+                    <div class="text-2xl font-black">GITHUB</div>
+                    <div class="text-2xl font-black">STRIPE</div>
+                    <div class="text-2xl font-black">SPACEX</div>
+                    <div class="text-2xl font-black">PALANTIR</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Performance Metrics -->
+        <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-black text-white mb-2">99.9%</div>
+                    <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest">Uptime</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-black text-white mb-2">12ms</div>
+                    <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest">Latency</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-black text-white mb-2">SOC2</div>
+                    <div class="text-[10px] text-accent-emerald font-bold uppercase tracking-widest">Compliance</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-black text-white mb-2">24/7</div>
+                    <div class="text-[10px] text-accent-rose font-bold uppercase tracking-widest">Monitoring</div>
+                </div>
+            </div>
+        </section>
+
+
+
     </main>
+
 
     <!-- Footer -->
     <footer class="glass border-t border-white/5 py-20 mt-24 relative overflow-hidden">
@@ -479,12 +525,17 @@
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-accent-emerald"></span>
                     <span>System Status: All Operations Normal</span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-10 transition-all duration-300 z-[100] hover:bg-accent-cyan hover:border-accent-cyan group">
+        <i data-lucide="arrow-up" class="w-6 h-6 group-hover:-translate-y-1 transition-transform"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="main.js"></script>
