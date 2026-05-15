@@ -54,12 +54,11 @@
                             class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent-cyan/30">
                             <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
                         </div>
-                        <span class="font-bold text-2xl tracking-tight text-white dark:text-white">
+                        <span class="font-bold text-2xl tracking-tight text-white">
                             VSCode<span class="text-accent-cyan">Dev</span>
                         </span>
                     </a>
 
-                    <!-- Desktop Menu -->
                     <!-- Desktop Menu -->
                     <div class="hidden xl:flex items-center space-x-1">
                         <a href="index.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
@@ -108,7 +107,6 @@
         </div>
 
         <!-- Mobile Menu -->
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden xl:hidden glass border-b border-white/5">
             <div class="px-4 pt-2 pb-4 space-y-1">
                 <a href="index.html"
@@ -124,7 +122,7 @@
                 <a href="case-studies.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
                 <a href="pricing.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Pricing</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan bg-accent-cyan/10 transition-all">Pricing</a>
                 <a href="contact.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                 <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
@@ -158,9 +156,9 @@
                 <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">Strategic pricing models designed to scale with your enterprise development needs.</p>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-8 mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
                 <!-- Startup -->
-                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-cyan/30 transition-all flex flex-col justify-between h-full">
+                <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-cyan/30 transition-all flex flex-col justify-between h-full">
                     <div>
                         <div class="w-14 h-14 bg-accent-cyan/10 rounded-2xl flex items-center justify-center text-accent-cyan mb-8">
                             <i data-lucide="zap" class="w-8 h-8"></i>
@@ -177,7 +175,7 @@
                 </div>
 
                 <!-- Pro (Featured) -->
-                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] glass p-10 rounded-[3rem] border-2 border-accent-violet relative overflow-hidden bg-white/5 shadow-2xl flex flex-col justify-between h-full md:scale-105 z-10">
+                <div class="glass p-10 rounded-[3rem] border-2 border-accent-violet relative overflow-hidden bg-white/5 shadow-2xl flex flex-col justify-between h-full md:scale-105 z-10">
                     <div class="absolute top-0 right-0 bg-accent-violet text-white text-[10px] font-black px-6 py-2 rounded-bl-2xl tracking-widest uppercase">Popular</div>
                     <div>
                         <div class="w-14 h-14 bg-accent-violet/10 rounded-2xl flex items-center justify-center text-accent-violet mb-8">
@@ -196,7 +194,7 @@
                 </div>
 
                 <!-- Enterprise -->
-                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)] glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-rose/30 transition-all flex flex-col justify-between h-full">
+                <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-rose/30 transition-all flex flex-col justify-between h-full">
                     <div>
                         <div class="w-14 h-14 bg-accent-rose/10 rounded-2xl flex items-center justify-center text-accent-rose mb-8">
                             <i data-lucide="globe" class="w-8 h-8"></i>
@@ -282,6 +280,32 @@
                         <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Distributed Core</span>
                     </div>
                  </div>
+            </div>
+            <!-- Enterprise Assurance Metrics -->
+            <div class="mt-32 pt-24 border-t border-white/5">
+                <div class="text-center mb-16">
+                    <span class="text-accent-emerald font-mono text-sm uppercase tracking-widest block mb-4 animate-pulse">// Operational Excellence</span>
+                    <h2 class="text-3xl sm:text-5xl font-black mb-4 text-white">ENTERPRISE <span class="text-accent-emerald">ASSURANCE</span></h2>
+                    <div class="w-24 h-1 bg-accent-emerald mx-auto rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl font-black text-white mb-2">99.9%</div>
+                        <div class="text-[10px] text-accent-cyan font-bold uppercase tracking-widest">Uptime</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-black text-white mb-2">12ms</div>
+                        <div class="text-[10px] text-accent-violet font-bold uppercase tracking-widest">Latency</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-black text-white mb-2">SOC2</div>
+                        <div class="text-[10px] text-accent-emerald font-bold uppercase tracking-widest">Compliance</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-black text-white mb-2">24/7</div>
+                        <div class="text-[10px] text-accent-rose font-bold uppercase tracking-widest">Monitoring</div>
+                    </div>
+                </div>
             </div>
         </section>
 

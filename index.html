@@ -59,7 +59,7 @@
                             class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent-cyan/30">
                             <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
                         </div>
-                        <span class="font-bold text-2xl tracking-tight text-white dark:text-white">
+                        <span class="font-bold text-2xl tracking-tight text-white">
                             VSCode<span class="text-accent-cyan">Dev</span>
                         </span>
                     </a>
@@ -123,7 +123,7 @@
         <div id="mobile-menu" class="hidden xl:hidden glass border-b border-white/5">
             <div class="px-4 pt-2 pb-4 space-y-1">
                 <a href="index.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan bg-accent-cyan/10 transition-all">Home</a>
                 <a href="home2.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
                     2</a>
@@ -171,7 +171,7 @@
         <!-- ==================== HOME 1 (CLASSIC) ==================== -->
         <section id="home1" class="page-section active">
             <!-- Hero -->
-            <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="relative min-h-[auto] py-20 lg:min-h-screen flex items-center justify-center overflow-hidden">
                 <div class="absolute inset-0 grid-bg opacity-50"></div>
                 <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div
@@ -206,7 +206,7 @@
                         </a>
                     </div>
 
-                    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="mt-12 lg:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                         <div class="glass rounded-2xl p-6">
                             <div class="text-3xl font-bold text-accent-cyan mb-1 flex items-center justify-center"><span
                                     class="counter" data-target="50">0</span>+</div>
@@ -214,12 +214,14 @@
                         </div>
                         <div class="glass rounded-2xl p-6">
                             <div class="text-3xl font-bold text-accent-violet mb-1 flex items-center justify-center">
-                                <span class="counter" data-target="2.5">0</span>M+</div>
+                                <span class="counter" data-target="2.5">0</span>M+
+                            </div>
                             <div class="text-sm text-gray-400">Million Downloads</div>
                         </div>
                         <div class="glass rounded-2xl p-6">
                             <div class="text-3xl font-bold text-accent-emerald mb-1 flex items-center justify-center">
-                                <span class="counter" data-target="99">0</span>%</div>
+                                <span class="counter" data-target="99">0</span>%
+                            </div>
                             <div class="text-sm text-gray-400">Client Satisfaction %</div>
                         </div>
                         <div class="glass rounded-2xl p-6">
@@ -232,8 +234,8 @@
             </div>
 
             <!-- Featured Extensions -->
-            <div class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-end justify-between mb-12">
+            <div class="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+                <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
                     <div>
                         <h2 class="text-3xl font-bold text-white mb-2">Featured Tools</h2>
                         <p class="text-gray-400">Popular extensions trusted by the community.</p>
@@ -252,9 +254,9 @@
                                 alt="CodeAccelerator"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
-                        <div class="tilt-content p-8">
+                        <div class="tilt-content p-8 text-left">
                             <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-cyan/20">
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-cyan/20 mx-auto">
                                 <i data-lucide="zap" class="w-6 h-6 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-2">CodeAccelerator</h3>
@@ -275,9 +277,9 @@
                                 alt="DebugPro"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
-                        <div class="tilt-content p-8">
+                        <div class="tilt-content p-8 text-left">
                             <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-violet to-purple-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-violet/20">
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-violet to-purple-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-violet/20 mx-auto">
                                 <i data-lucide="bug" class="w-6 h-6 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-2">DebugPro</h3>
@@ -298,9 +300,9 @@
                                 alt="ThemeEngine"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
-                        <div class="tilt-content p-8">
+                        <div class="tilt-content p-8 text-left">
                             <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-emerald to-green-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-emerald/20">
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-emerald to-green-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-emerald/20 mx-auto">
                                 <i data-lucide="layers" class="w-6 h-6 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-2">ThemeEngine</h3>
@@ -565,7 +567,8 @@
                                 <i data-lucide="star" class="w-5 h-5 text-yellow-500 fill-yellow-500"></i>
                                 <i data-lucide="star" class="w-5 h-5 text-yellow-500 fill-yellow-500"></i>
                             </div>
-                            <p class="text-xl text-white font-medium mb-8">"Beyond the code, the consulting on VSCode API limitations saved us months of wasted effort. Truly a specialist in the field."</p>
+                            <p class="text-xl text-white font-medium mb-8">"Beyond the code, the consulting on VSCode
+                                API limitations saved us months of wasted effort. Truly a specialist in the field."</p>
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-accent-violet">
                                     <img src="images/john_doe.png" alt="John Doe" class="w-full h-full object-cover">
@@ -589,10 +592,12 @@
                                 <i data-lucide="star" class="w-5 h-5 text-yellow-500 fill-yellow-500"></i>
                                 <i data-lucide="star" class="w-5 h-5 text-yellow-500 fill-yellow-500"></i>
                             </div>
-                            <p class="text-xl text-white font-medium mb-8">"The custom LSP built for our internal DSL has increased developer productivity by 40%. The attention to detail in the diagnostics is incredible."</p>
+                            <p class="text-xl text-white font-medium mb-8">"The custom LSP built for our internal DSL
+                                has increased developer productivity by 40%. The attention to detail impact ."</p>
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-accent-cyan">
-                                    <img src="images/sarah_miller.png" alt="Sarah Miller" class="w-full h-full object-cover">
+                                    <img src="images/sarah_miller.png" alt="Sarah Miller"
+                                        class="w-full h-full object-cover">
                                 </div>
                                 <div>
                                     <h5 class="font-bold">Sarah Miller</h5>
@@ -607,12 +612,12 @@
             </div>
 
             <!-- Section 5: Frequently Asked -->
-            <div class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl sm:text-5xl font-black mb-4 tracking-tight">Frequently Asked</h2>
-                <div class="w-16 h-1.5 bg-gradient-to-r from-accent-cyan to-accent-emerald mx-auto mb-16 rounded-full">
+            <div class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+                <h2 class="text-3xl sm:text-5xl font-black mb-4 tracking-tight text-center lg:text-left">Frequently Asked</h2>
+                <div class="w-16 h-1.5 bg-gradient-to-r from-accent-cyan to-accent-emerald mx-auto lg:mx-0 mb-16 rounded-full">
                 </div>
 
-                <div class="max-w-3xl mx-auto space-y-6">
+                <div class="max-w-3xl mx-auto lg:mx-0 space-y-6">
                     <div
                         class="glass p-6 rounded-2xl border border-white/5 text-left group cursor-pointer hover:border-accent-cyan/30 transition-all">
                         <div class="flex items-center justify-between">
@@ -798,24 +803,24 @@
                     </h4>
                     <ul class="space-y-6">
                         <li
-                            class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                            class="flex items-start justify-start gap-4 group cursor-pointer text-left">
                             <div
-                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
                             </div>
-                            <div>
+                            <div class="text-left">
                                 <div class="text-xs text-gray-500 uppercase font-bold">Email Us</div>
                                 <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">
                                     hello@vscodedev.com</div>
                             </div>
                         </li>
                         <li
-                            class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                            class="flex items-start justify-start gap-4 group cursor-pointer text-left">
                             <div
-                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="message-square" class="w-5 h-5"></i>
                             </div>
-                            <div>
+                            <div class="text-left">
                                 <div class="text-xs text-gray-500 uppercase font-bold">Live Chat</div>
                                 <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">Available
                                     24/7</div>

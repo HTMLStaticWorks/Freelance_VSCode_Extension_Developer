@@ -56,7 +56,7 @@
                             class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent-cyan/30">
                             <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
                         </div>
-                        <span class="font-bold text-2xl tracking-tight text-white dark:text-white">
+                        <span class="font-bold text-2xl tracking-tight text-white">
                             VSCode<span class="text-accent-cyan">Dev</span>
                         </span>
                     </a>
@@ -114,7 +114,7 @@
                 <a href="index.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
                 <a href="home2.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan transition-all">Home 2</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-accent-cyan bg-accent-cyan/10 transition-all">Home 2</a>
                 <a href="about.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                 <a href="services.html"
@@ -167,7 +167,7 @@
                             <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest">vscode-dev --v2.0.0</span>
                         </div>
                         <!-- Terminal Body -->
-                        <div class="p-12 font-mono">
+                        <div class="p-6 sm:p-12 font-mono text-left">
                             <div class="flex gap-4 mb-4">
                                 <span class="text-accent-cyan">$</span>
                                 <span class="text-white">init system --immersive</span>
@@ -177,8 +177,8 @@
                                 [OK] 3D Particle Field Active...<br>
                                 [OK] Neural Interface Connected...
                             </div>
-                            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-8 tracking-tighter text-white">COMMAND THE<br><span class="text-accent-cyan">EXPERIENCE</span></h1>
-                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+                            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-8 tracking-tighter text-white text-left">COMMAND THE<br><span class="text-accent-cyan">EXPERIENCE</span></h1>
+                            <div class="flex flex-col sm:flex-row items-center sm:justify-start gap-4 mt-12">
                                 <a href="extensions.html" class="w-full sm:w-auto px-8 py-4 bg-accent-cyan text-dark-bg font-black rounded-xl hover:scale-105 transition-all text-center whitespace-nowrap">ls --extensions</a>
                                 <a href="contact.html" class="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded-xl hover:bg-white/5 transition-all text-center whitespace-nowrap">connect --now</a>
                             </div>
@@ -217,7 +217,7 @@
                     
                     <div class="grid lg:grid-cols-2 gap-8">
                         <!-- UI Engine Sub-module -->
-                        <div class="glass rounded-[3rem] border border-white/5 overflow-hidden group p-8 flex flex-col md:flex-row gap-8 items-center">
+                        <div class="glass rounded-[3rem] border border-white/5 overflow-hidden group p-8 flex flex-col md:flex-row gap-8 items-center text-left">
                             <div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="UI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
                             </div>
@@ -225,23 +225,15 @@
                                 <div class="w-10 h-10 bg-accent-cyan/10 rounded-lg flex items-center justify-center text-accent-cyan mb-4"><i data-lucide="monitor" class="w-5 h-5"></i></div>
                                 <h3 class="text-2xl font-bold">UI Engine</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">Sub-millisecond responsiveness with fluid animations guiding your workflow.</p>
-                                <div class="flex gap-2">
-                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">React</span>
-                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">Tailwind</span>
-                                </div>
                             </div>
                         </div>
 
                         <!-- Core Synergy Sub-module -->
-                        <div class="glass rounded-[3rem] border border-white/5 overflow-hidden group p-8 flex flex-col md:flex-row gap-8 items-center">
+                        <div class="glass rounded-[3rem] border border-white/5 overflow-hidden group p-8 flex flex-col md:flex-row gap-8 items-center text-left">
                             <div class="w-full md:w-1/2 order-2 md:order-1 space-y-4">
                                 <div class="w-10 h-10 bg-accent-violet/10 rounded-lg flex items-center justify-center text-accent-violet mb-4"><i data-lucide="command" class="w-5 h-5"></i></div>
                                 <h3 class="text-2xl font-bold">Core Synergy</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">Deep integration with VSCode internal systems for native-feeling tools.</p>
-                                <div class="flex gap-2">
-                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">Node.js</span>
-                                    <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-gray-500 uppercase font-bold">VSCode API</span>
-                                </div>
                             </div>
                             <div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden order-1 md:order-2">
                                 <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="API" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">

@@ -204,6 +204,25 @@ body {
     background-color: rgba(16, 185, 129, 0.15) !important;
 }
 
+/* Gradient Visibility Fixes for Light Mode */
+.light-mode .from-white {
+    --tw-gradient-from: #0f172a !important;
+}
+
+.light-mode .to-gray-500 {
+    --tw-gradient-to: #475569 !important;
+}
+
+/* Ensure Logo is fully visible */
+.light-mode .text-white {
+    color: #0f172a !important;
+}
+
+.light-mode .dark\:text-white {
+    color: #0f172a !important;
+}
+
+
 /* Custom Prose */
 .prose h3 { color: white; font-weight: 800; }
 .prose p { margin-bottom: 1.5rem; }

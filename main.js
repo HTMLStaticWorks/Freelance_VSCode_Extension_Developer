@@ -120,8 +120,15 @@ function initBackToTop() {
     const backToTopBtn = document.getElementById('backToTop');
     if (!backToTopBtn) return;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
+    // Detect if we are on the dashboard or a standard page
+    const dashboardContainer = document.querySelector('.overflow-y-auto');
+    const scrollTarget = (document.getElementById('dashboard') && dashboardContainer) 
+        ? dashboardContainer 
+        : window;
+
+    scrollTarget.addEventListener('scroll', () => {
+        const scrollY = scrollTarget === window ? window.scrollY : scrollTarget.scrollTop;
+        if (scrollY > 500) {
             backToTopBtn.classList.remove('opacity-0', 'translate-y-10');
             backToTopBtn.classList.add('opacity-100', 'translate-y-0');
         } else {
@@ -131,9 +138,10 @@ function initBackToTop() {
     });
 
     backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollTarget.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
 
 /* --- Typing Effect (Removed) --- */
 function initTypingEffect() {}
