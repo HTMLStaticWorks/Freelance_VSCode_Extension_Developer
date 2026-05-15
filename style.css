@@ -173,15 +173,18 @@ body {
 }
 
 /* Social Icon Visibility Fix */
-.light-mode .social-icon-btn {
-    background: rgba(15, 23, 42, 0.05);
-    border-color: rgba(15, 23, 42, 0.1);
+.light-mode .social-icon-btn,
+.light-mode .social-uplink-link div {
+    background: rgba(15, 23, 42, 0.05) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
 }
-.light-mode .social-icon-btn img {
-    filter: brightness(0.2); /* Make colorful icons darker/visible on light bg */
+.light-mode .social-icon-btn img,
+.light-mode .social-uplink-link img {
+    filter: brightness(0.2); /* Make white icons visible on light bg */
 }
-.light-mode .social-icon-btn:hover {
-    background: rgba(15, 23, 42, 0.1);
+.light-mode .social-icon-btn:hover,
+.light-mode .social-uplink-link:hover div {
+    background: rgba(15, 23, 42, 0.1) !important;
 }
 
 /* Dashboard Specific Light Mode Refinements */

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing | VSCode Dev</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- UI Framework -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,13 +34,15 @@
             }
         }
     </script>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>">
 </head>
+
 <body class="bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden">
     <!-- Global Animation Background (Removed) -->
 
@@ -61,46 +65,54 @@
 
                     <!-- Desktop Menu -->
                     <div class="hidden xl:flex items-center space-x-1">
-                        <a href="index.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
-                        <a href="home2.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home 2</a>
-                        <a href="about.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
-                        <a href="services.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
-                        <a href="extensions.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
-                        <a href="case-studies.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
-                        <a href="pricing.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">Pricing</a>
-                        <a href="contact.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+                        <a href="index.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                        <a href="home2.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
+                            2</a>
+                        <a href="about.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
+                        <a href="services.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Services</a>
+                        <a href="extensions.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Extensions</a>
+                        <a href="case-studies.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Studies</a>
+                        <a href="pricing.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-accent-cyan transition-all">Pricing</a>
+                        <a href="contact.html"
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Contact</a>
                     </div>
 
 
                     <!-- Right Side -->
                     <div class="flex items-center gap-2">
-                         <!-- Desktop-only: icons -->
-                          <div class="hidden xl:flex items-center gap-2">
-                             <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-white/5 transition-colors"
-                                 aria-label="Toggle Theme">
-                                 <i data-lucide="moon" class="w-5 h-5 text-gray-300" id="dark-icon"></i>
-                             </button>
-                             <button onclick="toggleRTL()"
-                                 class="p-2 rounded-lg hover:bg-white/5 transition-colors"
-                                 aria-label="Toggle RTL">
-                                 <i data-lucide="align-right" class="w-5 h-5 text-gray-300"></i>
-                             </button>
-                             <a href="login.html"
-                                 class="p-2 rounded-lg hover:bg-white/5 transition-colors text-gray-300 hover:text-accent-cyan"
-                                 title="Sign In">
-                                 <i data-lucide="user" class="w-5 h-5"></i>
-                             </a>
-                             <a href="dashboard.html"
-                                 class="p-2.5 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet text-white hover:shadow-lg hover:shadow-accent-cyan/30 transition-all transform hover:-translate-y-0.5"
-                                 title="Dashboard">
-                                 <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
-                             </a>
-                         </div>
-                          <!-- Hamburger: mobile/tablet only -->
-                          <button onclick="toggleMobileMenu()"
-                              class="xl:hidden p-2 rounded-lg hover:bg-white/5 transition-colors">
-                             <i data-lucide="menu" class="w-6 h-6 text-white"></i>
-                         </button>
+                        <!-- Desktop-only: icons -->
+                        <div class="hidden xl:flex items-center gap-2">
+                            <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-white/5 transition-colors"
+                                aria-label="Toggle Theme">
+                                <i data-lucide="moon" class="w-5 h-5 text-gray-300" id="dark-icon"></i>
+                            </button>
+                            <button onclick="toggleRTL()" class="p-2 rounded-lg hover:bg-white/5 transition-colors"
+                                aria-label="Toggle RTL">
+                                <i data-lucide="align-right" class="w-5 h-5 text-gray-300"></i>
+                            </button>
+                            <a href="login.html"
+                                class="p-2 rounded-lg hover:bg-white/5 transition-colors text-gray-300 hover:text-accent-cyan"
+                                title="Sign In">
+                                <i data-lucide="user" class="w-5 h-5"></i>
+                            </a>
+                            <a href="dashboard.html"
+                                class="p-2.5 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet text-white hover:shadow-lg hover:shadow-accent-cyan/30 transition-all transform hover:-translate-y-0.5"
+                                title="Dashboard">
+                                <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                        <!-- Hamburger: mobile/tablet only -->
+                        <button onclick="toggleMobileMenu()"
+                            class="xl:hidden p-2 rounded-lg hover:bg-white/5 transition-colors">
+                            <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -112,7 +124,8 @@
                 <a href="index.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
                 <a href="home2.html"
-                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home 2</a>
+                    class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">Home
+                    2</a>
                 <a href="about.html"
                     class="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all">About</a>
                 <a href="services.html"
@@ -128,17 +141,22 @@
                 <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
                     <!-- Mobile: Theme & RTL toggles -->
                     <div class="flex items-center gap-2 pb-2">
-                        <button onclick="toggleDarkMode()" class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all" aria-label="Toggle Theme">
+                        <button onclick="toggleDarkMode()"
+                            class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all"
+                            aria-label="Toggle Theme">
                             <i id="dark-icon" data-lucide="moon" class="w-5 h-5 flex-shrink-0"></i>
                             <span>Theme</span>
                         </button>
-                        <button onclick="toggleRTL()" class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all" aria-label="Toggle RTL">
+                        <button onclick="toggleRTL()"
+                            class="flex items-center gap-3 flex-1 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all"
+                            aria-label="Toggle RTL">
                             <i data-lucide="align-right" class="w-5 h-5 flex-shrink-0"></i>
                             <span>RTL</span>
                         </button>
                     </div>
                     <a href="login.html"
-                        class="w-full px-4 py-3 rounded-lg text-center text-sm font-medium text-accent-cyan border border-accent-cyan/30">Sign In</a>
+                        class="w-full px-4 py-3 rounded-lg text-center text-sm font-medium text-accent-cyan border border-accent-cyan/30">Sign
+                        In</a>
                     <a href="dashboard.html"
                         class="w-full px-4 py-3 rounded-lg text-center text-sm font-semibold text-white bg-gradient-to-r from-accent-cyan to-accent-violet">Dashboard</a>
                 </div>
@@ -148,66 +166,92 @@
 
     <!-- Main Container -->
     <main id="app-container" class="min-h-screen pt-20 sm:pt-24">
-        
+
         <section id="pricing-tiers" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-24">
-                <span class="text-accent-cyan font-mono text-sm uppercase tracking-widest block mb-4 animate-pulse">// Scalable Architecture</span>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-8 tracking-tight text-white">Investment <span class="text-accent-cyan">Plans</span></h1>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">Strategic pricing models designed to scale with your enterprise development needs.</p>
+                <span class="text-accent-cyan font-mono text-sm uppercase tracking-widest block mb-4 animate-pulse">//
+                    Scalable Architecture</span>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black mb-8 tracking-tight text-white">Investment <span
+                        class="text-accent-cyan">Plans</span></h1>
+                <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">Strategic pricing models designed to
+                    scale with your enterprise development needs.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
                 <!-- Startup -->
-                <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-cyan/30 transition-all flex flex-col justify-between h-full align-left">
+                <div
+                    class="glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-cyan/30 transition-all flex flex-col justify-between h-full text-left align-left">
                     <div>
-                        <div class="w-14 h-14 bg-accent-cyan/10 rounded-2xl flex items-center justify-center text-accent-cyan mb-8">
+                        <div
+                            class="w-14 h-14 bg-accent-cyan/10 rounded-2xl flex items-center justify-center text-accent-cyan mb-8">
                             <i data-lucide="zap" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Startup</h3>
-                        <div class="text-5xl font-black mb-8 text-white">$1,999<span class="text-sm font-normal text-gray-500">/unit</span></div>
+                        <div class="text-5xl font-black mb-8 text-white">$1,999<span
+                                class="text-sm font-normal text-gray-500">/unit</span></div>
                         <ul class="space-y-4 mb-12">
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-cyan"></i> Custom Extension Core</li>
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-cyan"></i> VSCode API Integration</li>
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-cyan"></i> Standard Support</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-cyan"></i> Custom Extension Core</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-cyan"></i> VSCode API Integration</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-cyan"></i> Standard Support</li>
                         </ul>
                     </div>
-                    <button class="w-full py-5 rounded-2xl border border-accent-cyan/30 text-accent-cyan font-black hover:bg-accent-cyan hover:text-white transition-all">Select Plan</button>
+                    <button
+                        class="w-full py-5 px-10 rounded-2xl border border-accent-cyan/30 text-accent-cyan font-black hover:bg-accent-cyan hover:text-white transition-all text-left">Plan</button>
                 </div>
 
                 <!-- Pro (Featured) -->
-                <div class="glass p-10 rounded-[3rem] border-2 border-accent-violet relative overflow-hidden bg-white/5 shadow-2xl flex flex-col justify-between h-full md:scale-105 z-10 align-left">
-                    <div class="absolute top-0 right-0 bg-accent-violet text-white text-[10px] font-black px-6 py-2 rounded-bl-2xl tracking-widest uppercase">Popular</div>
+                <div
+                    class="glass p-10 rounded-[3rem] border-2 border-accent-violet relative overflow-hidden bg-white/5 shadow-2xl flex flex-col justify-between h-full md:scale-105 z-10 text-left align-left">
+                    <div
+                        class="absolute top-0 right-0 bg-accent-violet text-white text-[10px] font-black px-6 py-2 rounded-bl-2xl tracking-widest uppercase">
+                        Popular</div>
                     <div>
-                        <div class="w-14 h-14 bg-accent-violet/10 rounded-2xl flex items-center justify-center text-accent-violet mb-8">
+                        <div
+                            class="w-14 h-14 bg-accent-violet/10 rounded-2xl flex items-center justify-center text-accent-violet mb-8">
                             <i data-lucide="layers" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Pro Tooling</h3>
-                        <div class="text-5xl font-black mb-8 text-white">$4,999<span class="text-sm font-normal text-gray-500">/unit</span></div>
+                        <div class="text-5xl font-black mb-8 text-white">$4,999<span
+                                class="text-sm font-normal text-gray-500">/unit</span></div>
                         <ul class="space-y-4 mb-12">
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Full LSP Support</li>
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Custom Debug Adapter</li>
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Priority Maintenance</li>
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-violet"></i> Performance Audits</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-violet"></i> Full LSP Support</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-violet"></i> Custom Debug Adapter</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-violet"></i> Priority Maintenance</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-violet"></i> Performance Audits</li>
                         </ul>
                     </div>
-                    <button class="w-full py-5 rounded-2xl bg-accent-violet text-white font-black hover:shadow-lg hover:shadow-accent-violet/40 transition-all">Select Pro</button>
+                    <button
+                        class="w-full py-5 px-10 rounded-2xl bg-accent-violet text-white font-black hover:shadow-lg hover:shadow-accent-violet/40 transition-all text-left">Pro</button>
                 </div>
 
                 <!-- Enterprise -->
-                <div class="glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-rose/30 transition-all flex flex-col justify-between h-full">
+                <div
+                    class="glass p-10 rounded-[3rem] border border-white/5 hover:border-accent-rose/30 transition-all flex flex-col justify-between h-full text-left align-left">
                     <div>
-                        <div class="w-14 h-14 bg-accent-rose/10 rounded-2xl flex items-center justify-center text-accent-rose mb-8">
+                        <div
+                            class="w-14 h-14 bg-accent-rose/10 rounded-2xl flex items-center justify-center text-accent-rose mb-8">
                             <i data-lucide="globe" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
                         <div class="text-5xl font-black mb-8 text-white">Custom</div>
                         <ul class="space-y-4 mb-12">
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-rose"></i> AI Model Integration</li>
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-rose"></i> 24/7 Dedicated Lead</li>
-                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check" class="w-5 h-5 text-accent-rose"></i> Custom Architecture</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-rose"></i> AI Model Integration</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-rose"></i> 24/7 Dedicated Lead</li>
+                            <li class="flex items-center gap-3 text-gray-400"><i data-lucide="check"
+                                    class="w-5 h-5 text-accent-rose"></i> Custom Architecture</li>
                         </ul>
                     </div>
-                    <button class="w-full py-5 rounded-2xl border border-accent-rose/30 text-accent-rose font-black hover:bg-accent-rose hover:text-white transition-all">Inquire Now</button>
+                    <button
+                        class="w-full py-5 px-10 rounded-2xl border border-accent-rose/30 text-accent-rose font-black hover:bg-accent-rose hover:text-white transition-all text-left">Inquire</button>
                 </div>
             </div>
 
@@ -221,28 +265,33 @@
                         <thead>
                             <tr class="border-b border-white/5 bg-white/5">
                                 <th class="p-8 text-sm font-bold uppercase tracking-widest text-gray-500">Features</th>
-                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-cyan">Startup</th>
+                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-cyan">Startup
+                                </th>
                                 <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-violet">Pro</th>
-                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-rose">Enterprise</th>
+                                <th class="p-8 text-sm font-bold uppercase tracking-widest text-accent-rose">Enterprise
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-400">
                             <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
                                 <td class="p-8">VSCode API Implementation</td>
                                 <td class="p-8 text-accent-cyan"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
-                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i>
+                                </td>
                                 <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
                             </tr>
                             <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
                                 <td class="p-8">Language Server Protocol</td>
                                 <td class="p-8 text-gray-600"><i data-lucide="minus" class="w-5 h-5"></i></td>
-                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i>
+                                </td>
                                 <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
                             </tr>
                             <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
                                 <td class="p-8">Custom Webview UI</td>
                                 <td class="p-8 text-accent-cyan"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
-                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
+                                <td class="p-8 text-accent-violet"><i data-lucide="check-circle" class="w-5 h-5"></i>
+                                </td>
                                 <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
                             </tr>
                             <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
@@ -251,7 +300,7 @@
                                 <td class="p-8 text-gray-600"><i data-lucide="minus" class="w-5 h-5"></i></td>
                                 <td class="p-8 text-accent-rose"><i data-lucide="check-circle" class="w-5 h-5"></i></td>
                             </tr>
-                             <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
                                 <td class="p-8">Support SLA</td>
                                 <td class="p-8">48 Hours</td>
                                 <td class="p-8">12 Hours</td>
@@ -264,28 +313,40 @@
 
             <!-- Value Cards -->
             <div class="grid md:grid-cols-2 gap-8">
-                 <div class="glass p-12 rounded-[3rem] border border-white/5 group hover:border-accent-emerald/30 transition-all">
+                <div
+                    class="glass p-12 rounded-[3rem] border border-white/5 group hover:border-accent-emerald/30 transition-all">
                     <h3 class="text-3xl font-bold mb-6">Unrivaled ROI</h3>
-                    <p class="text-gray-400 text-lg leading-relaxed mb-8">Average teams report a 40% productivity lift within the first month of implementing our custom toolsets.</p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">Average teams report a 40% productivity lift
+                        within the first month of implementing our custom toolsets.</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-accent-emerald/10 flex items-center justify-center text-accent-emerald"><i data-lucide="trending-up" class="w-6 h-6"></i></div>
-                        <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Verified Analytics</span>
+                        <div
+                            class="w-12 h-12 rounded-full bg-accent-emerald/10 flex items-center justify-center text-accent-emerald">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i></div>
+                        <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Verified
+                            Analytics</span>
                     </div>
-                 </div>
-                 <div class="glass p-12 rounded-[3rem] border border-white/5 group hover:border-accent-cyan/30 transition-all">
+                </div>
+                <div
+                    class="glass p-12 rounded-[3rem] border border-white/5 group hover:border-accent-cyan/30 transition-all">
                     <h3 class="text-3xl font-bold mb-6">Global Scaling</h3>
-                    <p class="text-gray-400 text-lg leading-relaxed mb-8">Our solutions are built to handle massive enterprise needs, from thousands of users to global infrastructures.</p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">Our solutions are built to handle massive
+                        enterprise needs, from thousands of users to global infrastructures.</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-accent-cyan/10 flex items-center justify-center text-accent-cyan"><i data-lucide="globe" class="w-6 h-6"></i></div>
+                        <div
+                            class="w-12 h-12 rounded-full bg-accent-cyan/10 flex items-center justify-center text-accent-cyan">
+                            <i data-lucide="globe" class="w-6 h-6"></i></div>
                         <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Distributed Core</span>
                     </div>
-                 </div>
+                </div>
             </div>
             <!-- Enterprise Assurance Metrics -->
             <div class="mt-32 pt-24 border-t border-white/5">
                 <div class="text-center mb-16">
-                    <span class="text-accent-emerald font-mono text-sm uppercase tracking-widest block mb-4 animate-pulse">// Operational Excellence</span>
-                    <h2 class="text-3xl sm:text-5xl font-black mb-4 text-white">ENTERPRISE <span class="text-accent-emerald">ASSURANCE</span></h2>
+                    <span
+                        class="text-accent-emerald font-mono text-sm uppercase tracking-widest block mb-4 animate-pulse">//
+                        Operational Excellence</span>
+                    <h2 class="text-3xl sm:text-5xl font-black mb-4 text-white">ENTERPRISE <span
+                            class="text-accent-emerald">ASSURANCE</span></h2>
                     <div class="w-24 h-1 bg-accent-emerald mx-auto rounded-full"></div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -299,7 +360,8 @@
                     </div>
                     <div class="text-center">
                         <div class="text-5xl font-black text-white mb-2">SOC2</div>
-                        <div class="text-[10px] text-accent-emerald font-bold uppercase tracking-widest">Compliance</div>
+                        <div class="text-[10px] text-accent-emerald font-bold uppercase tracking-widest">Compliance
+                        </div>
                     </div>
                     <div class="text-center">
                         <div class="text-5xl font-black text-white mb-2">24/7</div>
@@ -317,9 +379,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <!-- Brand Column -->
-                <div class="space-y-8 text-center md:text-left">
+                <div class="space-y-8 text-left">
                     <div>
-                        <a href="index.html" class="flex items-center justify-center md:justify-start gap-3 mb-6 group">
+                        <a href="index.html" class="flex items-center justify-start gap-3 mb-6 group">
                             <div
                                 class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center shadow-lg shadow-accent-cyan/20 group-hover:rotate-12 transition-transform duration-500">
                                 <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
@@ -333,7 +395,7 @@
                         </p>
                     </div>
                     <!-- Social Icons -->
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <div class="flex flex-wrap justify-start gap-4">
                         <a href="#"
                             class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-cyan/50 hover:shadow-lg hover:shadow-accent-cyan/20 transition-all group overflow-hidden social-icon-btn">
                             <img src="images/ICON/twitter-icon.png" alt="Twitter"
@@ -346,6 +408,16 @@
                         </a>
                         <a href="#"
                             class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-rose/50 hover:shadow-lg hover:shadow-accent-rose/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/github-icon.png" alt="GitHub"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-emerald/50 hover:shadow-lg hover:shadow-accent-emerald/20 transition-all group overflow-hidden social-icon-btn">
+                            <img src="images/ICON/discord-icon.png" alt="Discord"
+                                class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-2xl glass border border-white/10 flex items-center justify-center hover:border-accent-rose/50 hover:shadow-lg hover:shadow-accent-rose/20 transition-all group overflow-hidden social-icon-btn">
                             <img src="images/ICON/instagram-icon.png" alt="Instagram"
                                 class="w-5 h-5 object-contain group-hover:scale-110 transition-transform">
                         </a>
@@ -353,29 +425,29 @@
                 </div>
 
                 <!-- Solutions -->
-                <div class="text-center md:text-left">
+                <div class="text-left">
                     <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
                         Solutions
-                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-cyan rounded-full"></span>
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-accent-cyan rounded-full"></span>
                     </h4>
                     <ul class="space-y-4">
                         <li><a href="services.html"
-                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 LSP Development</a></li>
                         <li><a href="services.html"
-                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 Debug Adapters</a></li>
                         <li><a href="services.html"
-                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 Custom Webviews</a></li>
                         <li><a href="services.html"
-                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-cyan transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 UI Architecture</a></li>
@@ -383,29 +455,29 @@
                 </div>
 
                 <!-- Company -->
-                <div class="text-center md:text-left">
+                <div class="text-left">
                     <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
                         Company
-                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-violet rounded-full"></span>
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-accent-violet rounded-full"></span>
                     </h4>
                     <ul class="space-y-4">
                         <li><a href="about.html"
-                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 About Me</a></li>
                         <li><a href="case-studies.html"
-                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 Case Studies</a></li>
                         <li><a href="extensions.html"
-                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 Marketplace</a></li>
                         <li><a href="pricing.html"
-                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-center md:justify-start gap-2 group"><i
+                                class="text-gray-400 hover:text-accent-violet transition-colors flex items-center justify-start gap-2 group"><i
                                     data-lucide="chevron-right"
                                     class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0"></i>
                                 Service Plans</a></li>
@@ -413,13 +485,13 @@
                 </div>
 
                 <!-- Contact & Support -->
-                <div class="text-center md:text-left">
+                <div class="text-left">
                     <h4 class="text-white font-bold text-lg mb-8 relative inline-block">
                         Support
-                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-8 h-1 bg-accent-emerald rounded-full"></span>
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-accent-emerald rounded-full"></span>
                     </h4>
                     <ul class="space-y-6">
-                        <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                        <li class="flex items-start justify-start gap-4 group cursor-pointer">
                             <div
                                 class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
@@ -430,7 +502,7 @@
                                     hello@vscodedev.com</div>
                             </div>
                         </li>
-                        <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
+                        <li class="flex items-start justify-start gap-4 group cursor-pointer">
                             <div
                                 class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="message-square" class="w-5 h-5"></i>
@@ -462,12 +534,13 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-10 transition-all duration-300 z-[100] hover:bg-accent-cyan hover:border-accent-cyan group">
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-10 transition-all duration-300 z-[100] hover:bg-accent-cyan hover:border-accent-cyan group">
         <i data-lucide="arrow-up" class="w-6 h-6 group-hover:-translate-y-1 transition-transform"></i>
     </button>
 
     <!-- Scripts -->
     <script src="main.js"></script>
 </body>
-</html>
 
+</html>
