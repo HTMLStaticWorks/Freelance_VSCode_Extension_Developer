@@ -182,7 +182,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Project 1 -->
-                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group p-8 flex flex-col justify-between h-full">
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group p-8 flex flex-col justify-between h-full align-left">
                     <div>
                         <div class="flex justify-between items-start mb-8">
                             <div class="w-12 h-12 bg-accent-cyan/10 rounded-xl flex items-center justify-center text-accent-cyan"><i data-lucide="database" class="w-6 h-6"></i></div>
@@ -286,7 +286,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group p-8 flex flex-col justify-between h-full">
+                <div class="glass rounded-[2.5rem] border border-white/5 hover:border-accent-cyan/30 transition-all group p-8 flex flex-col justify-between h-full align-left">
                     <div>
                         <div class="flex justify-between items-start mb-8">
                             <div class="w-12 h-12 bg-accent-cyan/10 rounded-xl flex items-center justify-center text-accent-cyan"><i data-lucide="rocket" class="w-6 h-6"></i></div>
@@ -340,17 +340,29 @@
         </section>
 
         <!-- Section 3: Industry Influence -->
-        <section class="py-24 bg-white/5">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-24 bg-white/5 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-accent-violet/5 to-transparent pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-[0.3em]">Institutional Trust</span>
+                    <span class="text-xs text-gray-500 font-black uppercase tracking-[0.4em] block mb-4">Institutional Trust</span>
+                    <div class="w-12 h-0.5 bg-accent-violet mx-auto rounded-full opacity-50"></div>
                 </div>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
-                    <div class="text-2xl font-black text-gray-500 hover:text-[#00a4ef] transition-all duration-300 cursor-default opacity-60 hover:opacity-100">MICROSOFT</div>
-                    <div class="text-2xl font-black text-gray-500 hover:text-white transition-all duration-300 cursor-default opacity-60 hover:opacity-100">GITHUB</div>
-                    <div class="text-2xl font-black text-gray-500 hover:text-[#635bff] transition-all duration-300 cursor-default opacity-60 hover:opacity-100">STRIPE</div>
-                    <div class="text-2xl font-black text-gray-500 hover:text-white transition-all duration-300 cursor-default opacity-60 hover:opacity-100">SPACEX</div>
-                    <div class="text-2xl font-black text-gray-500 hover:text-[#ffffff] transition-all duration-300 cursor-default opacity-60 hover:opacity-100">PALANTIR</div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div class="glass border border-white/5 rounded-[2rem] py-12 flex items-center justify-center group hover:border-accent-cyan/30 transition-all duration-500 hover:-translate-y-1">
+                        <span class="text-xl font-black tracking-tighter text-gray-600 group-hover:text-[#00a4ef] transition-colors duration-300">MICROSOFT</span>
+                    </div>
+                    <div class="glass border border-white/5 rounded-[2rem] py-12 flex items-center justify-center group hover:border-accent-violet/30 transition-all duration-500 hover:-translate-y-1">
+                        <span class="text-xl font-black tracking-tighter text-gray-600 group-hover:text-white transition-colors duration-300">GITHUB</span>
+                    </div>
+                    <div class="glass border border-white/5 rounded-[2rem] py-12 flex items-center justify-center group hover:border-accent-emerald/30 transition-all duration-500 hover:-translate-y-1">
+                        <span class="text-xl font-black tracking-tighter text-gray-600 group-hover:text-[#635bff] transition-colors duration-300">STRIPE</span>
+                    </div>
+                    <div class="glass border border-white/5 rounded-[2rem] py-12 flex items-center justify-center group hover:border-accent-rose/30 transition-all duration-500 hover:-translate-y-1">
+                        <span class="text-xl font-black tracking-tighter text-gray-600 group-hover:text-white transition-colors duration-300">SPACEX</span>
+                    </div>
+                    <div class="glass border border-white/5 rounded-[2rem] py-12 flex items-center justify-center group hover:border-accent-cyan/30 transition-all duration-500 hover:-translate-y-1 col-span-2 lg:col-span-1">
+                        <span class="text-xl font-black tracking-tighter text-gray-600 group-hover:text-[#ffffff] transition-colors duration-300">PALANTIR</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -497,10 +509,10 @@
                     <ul class="space-y-6">
                         <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
                             <div
-                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
                             </div>
-                            <div>
+                            <div class="text-left">
                                 <div class="text-xs text-gray-500 uppercase font-bold">Email Us</div>
                                 <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">
                                     hello@vscodedev.com</div>
@@ -508,10 +520,10 @@
                         </li>
                         <li class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
                             <div
-                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="message-square" class="w-5 h-5"></i>
                             </div>
-                            <div>
+                            <div class="text-left">
                                 <div class="text-xs text-gray-500 uppercase font-bold">Live Chat</div>
                                 <div class="text-gray-300 group-hover:text-accent-emerald transition-colors">Available
                                     24/7</div>

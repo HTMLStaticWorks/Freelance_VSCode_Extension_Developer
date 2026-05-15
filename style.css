@@ -204,6 +204,11 @@ body {
     background-color: rgba(16, 185, 129, 0.15) !important;
 }
 
+.light-mode .text-accent-cyan { color: #0e7490 !important; }
+.light-mode .text-accent-violet { color: #6d28d9 !important; }
+.light-mode .text-accent-emerald { color: #059669 !important; }
+.light-mode .text-accent-rose { color: #e11d48 !important; }
+
 /* Gradient Visibility Fixes for Light Mode */
 .light-mode .from-white {
     --tw-gradient-from: #0f172a !important;
@@ -220,6 +225,10 @@ body {
 
 .light-mode .dark\:text-white {
     color: #0f172a !important;
+}
+
+.text-keep-white {
+    color: white !important;
 }
 
 
@@ -258,16 +267,24 @@ body {
     }
 
     /* ── Card text alignment: ONLY inside main/section, NOT navbar ── */
-    main .glass,
-    section .glass,
-    .tilt-card .tilt-content {
+    main .glass:not(.faq-item):not(.align-left),
+    section .glass:not(.faq-item):not(.align-left),
+    .tilt-card .tilt-content:not(.align-left) {
         text-align: center;
     }
 
+    .faq-container .glass,
+    .faq-item,
+    .faq-item *,
+    .align-left,
+    .align-left * {
+        text-align: left !important;
+    }
+
     /* ── Card flex rows → center (main content only) ── */
-    main .glass > .flex,
-    section .glass > .flex,
-    .tilt-card > .flex {
+    main .glass:not(.faq-item):not(.align-left) > .flex,
+    section .glass:not(.faq-item):not(.align-left) > .flex,
+    .tilt-card:not(.align-left) > .flex {
         justify-content: center;
     }
 

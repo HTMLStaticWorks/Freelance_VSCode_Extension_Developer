@@ -256,7 +256,7 @@
                         </div>
                         <div class="tilt-content p-8 text-left">
                             <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-cyan/20 mx-auto">
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-cyan to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-cyan/20">
                                 <i data-lucide="zap" class="w-6 h-6 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-2">CodeAccelerator</h3>
@@ -279,7 +279,7 @@
                         </div>
                         <div class="tilt-content p-8 text-left">
                             <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-violet to-purple-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-violet/20 mx-auto">
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-violet to-purple-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-violet/20">
                                 <i data-lucide="bug" class="w-6 h-6 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-2">DebugPro</h3>
@@ -302,7 +302,7 @@
                         </div>
                         <div class="tilt-content p-8 text-left">
                             <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-emerald to-green-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-emerald/20 mx-auto">
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-emerald to-green-600 flex items-center justify-center mb-4 shadow-lg shadow-accent-emerald/20">
                                 <i data-lucide="layers" class="w-6 h-6 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-2">ThemeEngine</h3>
@@ -612,16 +612,16 @@
             </div>
 
             <!-- Section 5: Frequently Asked -->
-            <div class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-                <h2 class="text-3xl sm:text-5xl font-black mb-4 tracking-tight text-center lg:text-left">Frequently Asked</h2>
-                <div class="w-16 h-1.5 bg-gradient-to-r from-accent-cyan to-accent-emerald mx-auto lg:mx-0 mb-16 rounded-full">
+            <div class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-5xl font-black mb-4 tracking-tight text-center">Frequently Asked</h2>
+                <div class="w-16 h-1.5 bg-gradient-to-r from-accent-cyan to-accent-emerald mx-auto mb-16 rounded-full">
                 </div>
 
-                <div class="max-w-3xl mx-auto lg:mx-0 space-y-6">
+                <div class="max-w-3xl mx-auto space-y-6 faq-container">
                     <div
-                        class="glass p-6 rounded-2xl border border-white/5 text-left group cursor-pointer hover:border-accent-cyan/30 transition-all">
-                        <div class="flex items-center justify-between">
-                            <h4 class="text-lg font-bold">How long does a typical extension take?</h4>
+                        class="glass p-6 rounded-2xl border border-white/5 text-left group cursor-pointer hover:border-accent-cyan/30 transition-all faq-item">
+                        <div class="flex items-center justify-between gap-4">
+                            <h4 class="text-lg font-bold text-left">How long does a typical extension take?</h4>
                             <i data-lucide="plus"
                                 class="w-5 h-5 text-accent-cyan group-hover:rotate-90 transition-transform"></i>
                         </div>
@@ -631,9 +631,9 @@
                         </div>
                     </div>
                     <div
-                        class="glass p-6 rounded-2xl border border-white/5 text-left group cursor-pointer hover:border-accent-cyan/30 transition-all">
-                        <div class="flex items-center justify-between">
-                            <h4 class="text-lg font-bold">Do you handle marketplace publishing?</h4>
+                        class="glass p-6 rounded-2xl border border-white/5 text-left group cursor-pointer hover:border-accent-cyan/30 transition-all faq-item">
+                        <div class="flex items-center justify-between gap-4">
+                            <h4 class="text-lg font-bold text-left">Do you handle marketplace publishing?</h4>
                             <i data-lucide="plus"
                                 class="w-5 h-5 text-accent-cyan group-hover:rotate-90 transition-transform"></i>
                         </div>
@@ -643,9 +643,9 @@
                         </div>
                     </div>
                     <div
-                        class="glass p-6 rounded-2xl border border-white/5 text-left group cursor-pointer hover:border-accent-cyan/30 transition-all">
-                        <div class="flex items-center justify-between">
-                            <h4 class="text-lg font-bold">Can you integrate with AI models?</h4>
+                        class="glass p-6 rounded-2xl border border-white/5 text-left group cursor-pointer hover:border-accent-cyan/30 transition-all faq-item">
+                        <div class="flex items-center justify-between gap-4">
+                            <h4 class="text-lg font-bold text-left">Can you integrate with AI models?</h4>
                             <i data-lucide="plus"
                                 class="w-5 h-5 text-accent-cyan group-hover:rotate-90 transition-transform"></i>
                         </div>
@@ -803,7 +803,7 @@
                     </h4>
                     <ul class="space-y-6">
                         <li
-                            class="flex items-start justify-start gap-4 group cursor-pointer text-left">
+                            class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
                             <div
                                 class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
@@ -815,7 +815,7 @@
                             </div>
                         </li>
                         <li
-                            class="flex items-start justify-start gap-4 group cursor-pointer text-left">
+                            class="flex items-center justify-center md:items-start md:justify-start gap-4 group cursor-pointer">
                             <div
                                 class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-accent-emerald group-hover:bg-accent-emerald group-hover:text-white transition-all flex-shrink-0">
                                 <i data-lucide="message-square" class="w-5 h-5"></i>
