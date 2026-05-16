@@ -278,9 +278,9 @@ body {
 
     .faq-container .glass,
     .faq-item,
-    .faq-item *,
+    .faq-item *:not(button),
     .align-left,
-    .align-left * {
+    .align-left *:not(button) {
         text-align: left !important;
     }
 
